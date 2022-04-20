@@ -1,0 +1,136 @@
+@use './variables' as v;
+
+@mixin flex-center
+{
+    display:         flex;
+    align-items:     center;
+    justify-content: center;
+}
+
+@mixin list-columns($count: 2, $width: auto, $gap: 2em, $fill: auto)
+{
+    column-count: $count;
+    column-fill:  $fill;
+    column-gap:   $gap;
+    column-width: $width;
+
+    @media #{v.$small-tablet-max-767}
+    {
+        column-count: 1;
+        column-gap:   0;
+    }
+}
+
+@mixin padding-bottom-before-callout
+{
+    @media #{v.$laptop-min-1025}
+    {
+        padding-bottom: calc(#{v.$callout-button-height} / 2 + #{v.$default-section-margin});
+    }
+
+    @media #{v.$large-tablet}
+    {
+        padding-bottom: calc(#{v.$callout-button-tablet-height} / 2 + #{v.$default-mobile-section-margin});
+    }
+
+    @media #{v.$small-tablet-max-767}
+    {
+        padding-bottom: calc(#{v.$callout-button-mobile-height} / 2 + #{v.$default-mobile-section-margin});
+    }
+}
+
+@mixin padding-top-after-callout
+{
+    @media #{v.$laptop-min-1025}
+    {
+        padding-top: calc(#{v.$callout-button-height} / 2 + #{v.$default-section-margin});
+    }
+
+    @media #{v.$large-tablet}
+    {
+        padding-top: calc(#{v.$callout-button-tablet-height} / 2 + #{v.$default-mobile-section-margin});
+    }
+
+    @media #{v.$small-tablet-max-767}
+    {
+        padding-top: calc(#{v.$callout-button-mobile-height} + #{v.$default-mobile-section-margin});
+    }
+}
+
+@mixin large-tablet-columns-to-rows
+{
+    &.main-grid
+    {
+        @media #{v.$large-tablet}
+        {
+            flex-direction: column;
+            flex-wrap:      wrap;
+        }
+    }
+
+    .main-grid-item
+    {
+        @media #{v.$large-tablet}
+        {
+            margin: 0;
+        }
+
+        + .main-grid-item
+        {
+            @media #{v.$large-tablet}
+            {
+                margin-top: v.$default-padding;
+            }
+        }
+    }
+}
+
+@mixin top-separator-padding($padding)
+{
+    margin-top:  $padding;
+    padding-top: $padding;
+}
+
+@mixin bottom-separator-padding($padding)
+{
+    margin-bottom:  $padding;
+    padding-bottom: $padding;
+}
+
+@mixin top-half-image-separator
+{
+    &::before
+    {
+        position:         absolute;
+        top:              0;
+        width:            100%;
+        height:           1px;
+        background-color: $medium-gray;
+        content:          '';
+
+        @media #{v.$tablet-max-1024}
+        {
+            width: 96%;
+        }
+    }
+}
+
+@mixin bottom-half-image-separator($marginLeft: 0, $width: 100%, $bottom: 1px)
+{
+    &::after
+    {
+        position:         absolute;
+        bottom:           $bottom;
+        z-index:          1;
+        width:            $width;
+        height:           1px;
+        margin-left:      $marginLeft;
+        background-color: $medium-gray;
+        content:          '';
+
+        @media #{v.$tablet-max-1024}
+        {
+            width: 96%;
+        }
+    }
+}

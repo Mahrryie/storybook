@@ -1,0 +1,91 @@
+@use '../styles/variables.scss' as v;
+
+.image-grid-bordered-caption
+{
+    display: flex;
+
+    &-item
+    {
+        @media only screen and (min-width: v.$large-tablet-start-768)
+        {
+            margin-right: v.$default-padding;
+        }
+
+        &:last-child
+        {
+            margin-right: 0;
+
+            @media #{v.$small-tablet-max-767}
+            {
+                margin-bottom: 0;
+            }
+
+        }
+
+        @media #{v.$small-tablet-max-767}
+        {
+            margin-bottom: v.$middle-margin;
+        }
+
+        a:hover h4
+        {
+            text-decoration: underline;
+        }
+    }
+
+    &-text
+    {
+        margin-top:    v.$default-padding;
+        margin-bottom: v.$default-padding;
+        padding-top:   8px;
+        border-top:    4px solid;
+
+        &.image-grid-empty
+        {
+            margin-bottom: 20px;
+            padding-top:   0;
+        }
+
+        .caption-name
+        {
+            color:         $pure-black;
+            margin-bottom: 0;
+
+            &.extra-bold
+            {
+                font-weight: 800;
+            }
+
+            + .caption-text
+            {
+                padding-top: 8px;
+                color: $pure-black;
+            }
+        }
+
+        &.halved-border
+        {
+            padding-top: 0;
+            border:      none;
+
+            &:before
+            {
+                display:       block;
+                width:         46%;
+                height:        4px;
+                margin-bottom: 8px;
+                content:       '';
+            }
+        }
+    }
+
+    &-img.gatsby-image-wrapper
+    {
+        height: 280px;
+
+        .image
+        {
+            position: relative;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+.breadcrumbs
+{
+    display:       flex;
+    margin-bottom: 59px;
+
+    @media #{v.$tablet-max-1024}
+    {
+        display: none;
+    }
+}
+
+.breadcrumbs-item
+{
+    position:        relative;
+    margin-right:    12px;
+    padding-right:   12px;
+    color:           $dark-gray;
+    font-weight:     300;
+    font-size:       14px;
+    line-height:     18px;
+    list-style-type: none;
+
+    &:not(:last-of-type)
+    {
+        &::after
+        {
+            position:         absolute;
+            top:              0;
+            right:            0;
+            width:            1px;
+            height:           100%;
+            background-color: $dark-gray;
+            transform:        rotate(20deg);
+            content:          '';
+        }
+    }
+}
+
+.breadcrumbs-link
+{
+    &:hover
+    {
+        text-decoration: underline;
+    }
+}

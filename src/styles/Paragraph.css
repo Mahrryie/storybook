@@ -1,0 +1,46 @@
+p,
+.paragraph
+{
+    color:       #000000;
+    font-weight: 300;
+    font-size:   16px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    max-width: 800px;
+}
+
+p.medium-bold, .paragraph.medium-bold
+{
+    font-weight: 500;
+}
+
+.paragraph-stong strong {
+    font-weight: 700;
+}
+
+p.extra-text-margin, .paragraph.extra-text-margin
+{
+    margin-bottom: 40px;
+}
+
+@media only screen and (max-width: 767px) {
+
+    p.extra-text-margin, .paragraph.extra-text-margin {
+
+        margin-bottom: 20px;
+    }
+}
+
+p + p, p + .paragraph, .paragraph + p, .paragraph + p {
+
+    padding-top: 20px;
+
+}
+p a, .paragraph a {
+    transition: all 0.3s ease;
+
+}
+
+p a:hover, .paragraph a:hover {
+    text-decoration: underline;
+} 

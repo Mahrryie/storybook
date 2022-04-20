@@ -1,0 +1,42 @@
+@use '../styles/variables.scss' as v;
+@use '../styles/colors.scss' as c;
+
+.quote-block
+{
+    margin-top:       40px;
+    padding:          28px v.$default-padding v.$default-padding 54px;
+    border:           1px solid rgba(9, 166, 163, 0.3);
+    background-color: c.$light-green-opacity;
+
+    &-title
+    {
+        font-weight: 300;
+        line-height: 1.2;
+    }
+
+    &-text
+    {
+        position: relative;
+        display:  flex;
+
+        .quote-svg
+        {
+            position: absolute;
+            left:     -34px;
+        }
+    }
+
+    &-author
+    {
+        margin-top: 24px;
+    }
+
+    &-position
+    {
+        max-width:   188px;
+        padding-top: 6px;
+        color:       c.$dark-gray;
+        font-size:   14px;
+        line-height: 18px;
+    }
+}

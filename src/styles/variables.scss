@@ -1,0 +1,145 @@
+@use 'sass:math';
+
+$content-area: 1216px;
+$small-content-area: 800px;
+$small-container-area: 592px;
+$small-data-area: 536px;
+/* TODO : need to find the best variant to make 100% and 100vw the same.
+    10 px here needs to minimize the scroll width difference for vw and %. */
+$scrollbar-width: 7.5px;
+$content-offset: calc(((100vw - #{$content-area}) / 2) - #{$scrollbar-width});
+$content-offset-fullwidth: calc((100% - #{$content-area}) / 2);
+$content-offset-fullwidth-small-content-area: calc(((100% - #{$content-area}) / 2) + #{$small-content-area});
+$large-padding: 72px;
+$middle-padding: 60px;
+$default-padding: 32px;
+$small-padding: 22px;
+$grid-left-padding: 56px;
+$large-margin: 80px;
+$semi-large-margin: 60px;
+$middle-margin: 40px;
+$small-margin: 20px;
+$default-mobile-padding: 20px;
+$default-section-margin: 100px;
+$default-mobile-section-margin: 60px;
+$callout-button-height: 124px;
+$callout-button-extra-height: 148px;
+$callout-tablet-button-height: 150px;
+$callout-button-tablet-height: 116px;
+$callout-button-mobile-height: 90px;
+$icon-square-size: 62px;
+$small-icon-square-size: 48px;
+$blog-content-offset: 103px;
+$header-padding: 40px;
+$basic-hover-transition: 0.3s;
+$contact-us-textarea-height: 160px;
+$arrow-link-hover-transform: 4px;
+$inline-block-extra-small-margin: 16px;
+$default-top-bottom-section-padding: 100px;
+$has-halved-callout-top-bottom: $default-section-margin + math.div($callout-button-height, 2);
+$has-halved-tablet-callout-top-bottom: $default-mobile-section-margin + math.div($callout-button-tablet-height, 2);
+$has-halved-mobile-callout-top-bottom: $default-section-margin + math.div($callout-button-tablet-height, 2);
+$has-callout-bottom: $default-section-margin + $callout-button-height;
+$list-default-column-gap: 52px;
+$list-grand-column-gap: 80px;
+$title-link-default-margin-bottom: 24px;
+
+$homepage-container: 1744px;
+$homepage-content: 848px;
+$content-padding: calc((100vw - #{$homepage-container}) / 2);
+$grid-items-space-between: 104px;
+$left-additional-padding: 352px;
+$left-padding: calc(#{$content-padding} + #{$left-additional-padding} - #{$grid-items-space-between});
+
+/* Navigation */
+$header-top-position: 38px;
+$header-bottom-position: 21px;
+$header-top-position-sticky: 20px;
+$logo-top-offset: 4px;
+$header-desktop-height: 80px;
+
+/* Static pages */
+$static-default-padding: 120px;
+$static-block-padding: 80px;
+$privacy-list-padding: 20px;
+$privacy-menu-padding: calc(#{$content-offset-fullwidth} + 416px);
+$privace-block-offset: 60px;
+
+/* Accordion */
+$accordion-item-top-offset: 32px;
+$accordion-item-padding: 32px;
+$accordion-item-padding-closed: 20px;
+$accordion-item-padding-device: 20px;
+$accordion-item-padding-device-closed: 18px;
+
+/*! Breakpoints */
+$huge-desktop-min: 2560px;
+$desktop-1920: 1920px;
+$laptop-1280: 1280px;
+$medium-desktop-min: 1535px;
+$laptop-1439: 1439px;
+$laptop-pro-start-1440: 1440px;
+$laptop-1025: 1025px;
+$large-tablet-end-1024: 1024px;
+$medium-tablet-pro-end-835: 835px;
+$large-tablet-start-768: 768px;
+$small-tablet-end-767: 767px;
+$small-tablet-start-480: 480px;
+$mobile-end-479: 479px;
+$mobile-start-320: 320px;
+$small-mobile-end-374: 374px;
+
+
+/* Sidemenu*/
+$static-page-menu-width: 270px;
+$blog-portfolio-menu-initial: 280px;
+$blog-portfolio-menu-width-super-min-tablet: 220px;
+$top-mobile-menu-sticky: 140px;
+$mobile-side-menu: 100%;
+$mobile-menu-padding: 50px 0 0 20px;
+$static-divider-super-tablet-min: $blog-portfolio-menu-initial + $default-mobile-section-margin;
+/* Additional breakpoint sidemenu */
+$side-menu-near-desktop-min: 1120px;
+
+$content-area-min: $content-area + $default-padding * 2;
+
+/*! Media queries */
+$content-area-desktop: 'only screen and (max-width: #{$content-area})';
+$huge-desktop: 'only screen and (min-width: #{$huge-desktop-min})';
+$desktop-min-1920: 'only screen and (min-width: #{$desktop-1920})';
+$desktop-max-1920: 'only screen and (max-width: #{$desktop-1920})';
+$desktop-max-1919: 'only screen and (max-width: #{$desktop-1920 - 1})';
+$laptop-max-1280: 'only screen and (max-width: #{$laptop-1280})';
+$laptop-min-1280: 'only screen and (min-width: #{$laptop-1280})';
+$laptop-min-1025: 'only screen and (min-width: #{$laptop-1025})';
+$medium-desktop: 'only screen and (min-width: #{$medium-desktop-min})';
+$medium-min-desktop: 'only screen and (max-width: #{$medium-desktop-min})';
+$small-desktop: 'only screen and (min-width: #{$laptop-1025}) and (max-width: #{$content-area-min})';
+$small-max-desktop: 'only screen and (min-width: #{$laptop-1025}) and (max-width: #{$laptop-1439})';
+$large-tablet: 'only screen and (min-width: #{$large-tablet-start-768}) and (max-width: #{$large-tablet-end-1024})';
+$small-tablet: 'only screen and (min-width: #{$small-tablet-start-480}) and (max-width: #{$small-tablet-end-767})';
+$mobile-max-479: 'only screen and (max-width: #{$mobile-end-479})';
+$small-mobile-max-374: 'only screen and (max-width: #{$small-mobile-end-374})';
+$cta-breakpoint: 'only screen and (max-width: #{$laptop-pro-start-1440})';
+$tablet-max-1024: 'only screen and (max-width: #{$large-tablet-end-1024})';
+$small-tablet-max-767: 'only screen and (max-width: #{$small-tablet-end-767})';
+$small-tablet-min-767: 'only screen and (min-width: #{$small-tablet-end-767})';
+$tablet-min-768: 'only screen and (min-width: #{$large-tablet-start-768})';
+
+$small-desktop-view: 'only screen and (min-width: #{$laptop-1025}) and (max-width: #{$content-area-min})';
+$large-desktop-view: 'only screen and (min-width: #{$content-area-min + 1})';
+$big-desktop-view: '#{$large-desktop-view} and (max-width: #{$medium-desktop-min})';
+$medium-desktop-view: 'only screen and (min-width: #{$content-area + 1})';
+
+$mobile-landscape: '#{$mobile-max-479} and (orientation : landscape)';
+$mobile-portrait: '#{$mobile-max-479} and (orientation : portrait)';
+$small-tablet-landscape: '#{$small-tablet} and (orientation : landscape)';
+$small-tablet-portrait: '#{$small-tablet} and (orientation : portrait)';
+$large-tablet-landscape: '#{$large-tablet} and (orientation : landscape)';
+$large-tablet-portrait: '#{$large-tablet} and (orientation : portrait)';
+
+$navigation-device-view: 'only screen and (max-width: #{$large-tablet-end-1024 - 1})';
+
+$navigation-desktop-view: 'only screen and (min-width: #{$large-tablet-end-1024})';
+
+$at-container-width: 'only screen and(max-width: #{$content-area})';

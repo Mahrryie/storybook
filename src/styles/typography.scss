@@ -1,0 +1,263 @@
+@use '../styles/variables.scss' as v;
+@use '../styles/colors.scss' as c;
+@import './fonts.scss';
+@import './TitleLink.scss';
+@import './TitleCopy.scss';
+
+@mixin paragraph($main-color: c.$black, $font-weight: 300, $font-size: 16px)
+{
+    color:       $main-color;
+    font-weight: $font-weight;
+    font-size:   $font-size;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+@mixin second-level-title($main-color: c.$pure-black, $line-height: 1.2)
+{
+    margin-bottom: 32px;
+    color:         $main-color;
+    font-weight:   900;
+    font-size:     40px;
+    line-height:   $line-height;
+
+    @media #{v.$tablet-max-1024}
+    {
+        margin-bottom: 28px;
+        font-weight:   800;
+        font-size:     28px;
+    }
+
+    + svg
+    {
+        margin-top: 8px;
+    }
+
+    + .scheme-rec-outstanding-scheme
+    {
+        margin-top: v.$semi-large-margin;
+    }
+}
+
+@mixin third-level-title($main-color: c.$pure-black, $line-height: 1.2)
+{
+    margin-bottom: 24px;
+    color:         c.$pure-black;
+    font-weight:   900;
+    font-size:     32px;
+    line-height:   $line-height;
+
+    @media #{v.$tablet-max-1024}
+    {
+        margin-bottom: v.$default-mobile-padding;
+        font-weight:   700;
+        font-size:     20px;
+    }
+}
+
+@mixin fourth-level-title($main-color: c.$pure-black, $line-height: 1.3)
+{
+    margin-bottom: 20px;
+    color:         $main-color;
+    font-weight:   800;
+    font-size:     24px;
+    line-height:   $line-height;
+
+    @media #{v.$tablet-max-1024}
+    {
+        font-weight:   700;
+        font-size:     20px;
+    }
+}
+
+@mixin fifth-level-title($main-color: c.$pure-black, $line-height: 1.3)
+{
+    color:       $main-color;
+    font-weight: 700;
+    font-size:   20px;
+    line-height: $line-height;
+
+    @media #{v.$tablet-max-1024}
+    {
+        font-weight: 600;
+        font-size:   18px;
+    }
+}
+
+@mixin title-no-margin()
+{
+    .title-copy-columns &,
+    .table &,
+    .table-top-bordered &,
+    .callout-stripe &,
+    .callout-stripe-small &,
+    .tabs-items &
+    {
+        @media #{v.$laptop-min-1025, v.$large-tablet}
+        {
+            margin-bottom: 0;
+        }
+    }
+
+    .title-alone &
+    {
+        margin-bottom: 0;
+    }
+
+    &:empty
+    {
+        margin: 0;
+    }
+}
+
+p,
+.paragraph
+{
+    @include paragraph;
+    max-width: v.$small-content-area;
+
+    &.medium-bold
+    {
+        font-weight: 500;
+
+        &-700
+        {
+            font-weight: 700
+        }
+    }
+
+    &-strong strong
+    {
+        font-weight: 700;
+    }
+
+    &.extra-text-margin
+    {
+        margin-bottom: v.$middle-margin;
+
+        @media #{v.$small-tablet-max-767}
+        {
+            margin-bottom: v.$default-mobile-padding;
+        }
+    }
+
+    + .paragraph,
+    + p
+    {
+        padding-top: 20px;
+    }
+
+    a
+    {
+        transition: all v.$basic-hover-transition ease;
+
+        &:hover
+        {
+            text-decoration: underline;
+        }
+    }
+
+    &.paragraph-list-item-lh
+    {
+        line-height: 1.25;
+    }
+}
+
+h1,
+.first-level-title
+{
+
+    color:       c.$white;
+    font-weight: 900;
+    font-size:   52px;
+    line-height: 1.2;
+
+    @media #{v.$tablet-max-1024}
+    {
+        font-size: 36px;
+    }
+}
+
+h2,
+.second-level-title
+{
+    @include second-level-title;
+    @include title-no-margin;
+}
+
+h3,
+.third-level-title
+{
+    @include third-level-title;
+    @include title-no-margin;
+}
+
+h4,
+.fourth-level-title
+{
+    @include fourth-level-title;
+    @include title-no-margin;
+}
+
+h5,
+.fifth-level-title
+{
+    @include fifth-level-title;
+}
+
+.single-title
+{
+    margin-bottom: 44px;
+
+    @media #{v.$small-tablet-max-767}
+    {
+        margin-bottom: v.$default-padding;
+    }
+}
+
+.title-number
+{
+    font-weight: 300;
+
+    .section-image-content &
+    {
+        font-weight: 400;
+        font-size:   32px;
+        line-height: 1.2;
+
+        + .image-copy-title
+        {
+            display: inline-block;
+        }
+    }
+}
+
+.title-text-number
+{
+    display:       block;
+    float:         left;
+    height:        100%;
+    padding-right: 24px;
+    font-weight:   500;
+    font-size:     20px;
+    line-height:   24px;
+}
+
+body * {
+    @include november-font;
+}
+
+.title-number
+{
+    font-weight: 300;
+}
+
+[class*='-bolder']
+{
+    font-weight: 500;
+}
+
+[class*='--thinner']
+{
+    font-weight: 300;
+}

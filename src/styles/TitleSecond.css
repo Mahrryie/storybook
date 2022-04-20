@@ -1,0 +1,15 @@
+.second-level-title {
+    margin-bottom: 32px;
+    color: #000000;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 1.2;
+}
+
+@media only screen and (max-width: 1024px) {
+    .second-level-title {
+        margin-bottom: 28px;
+        font-weight:   800;
+        font-size:     28px;
+    }
+}

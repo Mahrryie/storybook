@@ -1,0 +1,64 @@
+@font-face
+{
+    font-weight:  300;
+    font-family:  November;
+    font-style:   normal;
+    src:          url('./fonts/november-pro-light.woff2') format('woff2'),
+        url('./fonts/november-pro-light.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face
+{
+    font-weight:  400;
+    font-family:  November;
+    font-style:   normal;
+    src:          url('./fonts/november-pro-regular.woff2') format('woff2'),
+        url('./fonts/november-pro-regular.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face
+{
+    font-weight:  500;
+    font-family:  November;
+    font-style:   normal;
+    src:          url('./fonts/november-pro-medium.woff2') format('woff2'),
+        url('./fonts/november-pro-medium.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face
+{
+    font-weight:  700;
+    font-family:  November;
+    font-style:   normal;
+    src:          url('./fonts/november-pro-bold.woff2') format('woff2'),
+        url('./fonts/november-pro-bold.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face
+{
+    font-weight:  800;
+    font-family:  November;
+    font-style:   normal;
+    src:          url('./fonts/november-pro-heavy.woff2') format('woff2'),
+        url('./fonts/november-pro-heavy.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face
+{
+    font-weight:  900;
+    font-family:  November;
+    font-style:   normal;
+    src:          url('./fonts/november-pro-black.woff2') format('woff2'),
+        url('./fonts/november-pro-black.woff') format('woff');
+    font-display: swap;
+}
+
+@mixin november-font
+{
+    font-family: November, 'helvetica neue', Arial, sans-serif;
+}

@@ -1,0 +1,56 @@
+@use '../styles/variables.scss' as v;
+
+.image-arrow-links
+{
+    + .background-theme,
+    + .background-light-gray
+    {
+        margin-top: - v.$default-section-margin;
+
+        @media #{v.$tablet-max-1024}
+        {
+            margin-top: - v.$default-mobile-section-margin;
+        }
+    }
+}
+
+.arrow-links-item
+{
+    position:      relative;
+    padding:       0 v.$large-padding v.$middle-padding 0;
+    border-bottom: 1px solid $medium-gray;
+
+    @media #{v.$tablet-max-1024}
+    {
+        padding: 0 0 78px 0;
+    }
+
+    &:not(:first-of-type)
+    {
+        margin-top: v.$middle-padding;
+
+        @media #{v.$tablet-max-1024}
+        {
+            margin-top: 38px;
+        }
+    }
+
+    &.has-no-link
+    {
+        @media #{v.$tablet-max-1024}
+        {
+            padding: 0 0 43px 0;
+        }
+    }
+}
+
+.image-arrow-title-haslink
+{
+    cursor:     pointer;
+    transition: all 0.3s ease;
+
+    &:hover
+    {
+        text-decoration: underline;
+    }
+}

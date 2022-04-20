@@ -1,0 +1,1072 @@
+@use './variables' as v;
+
+$blue: #082EB5;
+$blue-hover: #06248C;
+$blue-active: #00155E;
+$light-blue: #0B75FD;
+$dark-blue: #091E6C;
+$dark-blue-hover-opacity: rgba($dark-blue, 0.3);
+$pink: #FF04D5;
+$pink-hover: #DA05B6;
+$pink-active: #BA029B;
+$primary-gradient-1: #007AFF;
+$primary-gradient-2: #2767F8;
+$primary-gradient-3: #8938E5;
+$primary-gradient-4: #FF00CF;
+
+//Second scheme
+$green: #006A70;
+$green-hover: #005B60;
+$green-active: #003E41;
+$light-green: #09A6A3;
+$light-green-opacity: rgba($light-green, 0.03);
+$dark-green: #003849;
+$dark-green-hover-opacity: rgba($dark-green, 0.3);
+$red: #F8374E;
+$red-hover: #DD1B32;
+$red-active: #C1071D;
+$dark-red: #C91616;
+$light-purple: #B27CB8;
+$secondary-gradient-1: #FC354C;
+$secondary-gradient-3: #0ABFBC;
+
+
+//Third scheme
+$dark-burgundy: #450039;
+$dark-burgundy-hover-opacity: rgba($dark-burgundy, 0.3);
+$lilac: #BB1DB5;
+$burgundy: #73004C;
+$burgundy-hover: #59003B;
+$burgundy-active: #350023;
+$orange: #FB7700;
+$orange-hover: #E67109;
+$orange-active: #CA6408;
+$tertiary-gradient-1: #F09819;
+$tertiary-gradient-2: #E42B14;
+$tertiary-gradient-3: #CE238A;
+$tertiary-gradient-4: #BB1DB5;
+
+//Fourth scheme
+$dark-purple: #280f59;
+$dark-purple-hover-opacity: rgba($dark-purple, 0.3);
+$medium-purple: #59068C;
+$medium-purple-hover:      #3E0263;
+$medium-purple-active:     #3E0263;
+$purple:                   #9614E6;
+$turquoise:                #21E0DD;
+$turquoise-hover:          #12CAC7;
+$turquoise-active:         #10B5B2;
+$medium-blue:              #5C73D9;
+$turqouise-light:          #2DE0DD;
+$dust-blue:                #27B1CF;
+$violet:                   #A410FF;
+
+// Common colors
+$black:                    #323232;
+$pure-black:               #000000;
+$dark-gray:                #6E6D71;
+$gray:                     #828282;
+$medium-gray:              #C4C4C4;
+$light-gray:               #E0E0E0;
+$lighter-gray:             #F2F2F2;
+$super-light-gray:         #F8F8F8;
+$white:                    #FFFFFF;
+$scheme-gray:              #EEEEEE;
+
+// Static pages
+$layout-404-background-bottom: #081750;
+$layout-404-hover: $light-blue;
+$dark-background-gradient: radial-gradient(58.83% 58.83% at 55.74% 41.17%, #172397 0%, #081854 47.06%, #040E33 100%);
+$layout-404-link-btn-hover: #1443EB;
+$layout-404-btn-active: #2051FF;
+$layout-404-outline-btn-hover: #0B75FD;
+$layout-404-outline-btn-active-bg: rgba($white, 0.05);
+
+@mixin theme(
+    $name,
+    $main-color,
+    $main-color-hover,
+    $main-color-active,
+    $second-color,
+    $third-color,
+    $third-color-hover,
+    $third-color-active,
+    $gradient-1,
+    $gradient-2,
+    $gradient-3,
+    $fourth-color,
+    $fourth-color-opacity-hover,
+    $nav-link-color,
+    $circle-gradient-1,
+    $circle-gradient-2,
+    $circle-gradient-4,
+)
+{
+    .#{$name}
+    {
+        a,
+        .blog-portfolio-content .colored-titles-table table tr:nth-of-type(even) td:first-of-type,
+        a.list-block-link-item:hover .list-block-links-title
+        {
+            color: $second-color;
+        }
+
+        a.list-link-accordion
+        {
+            color:           $black;
+            text-decoration: underline;
+
+            &:hover
+            {
+                color: $gradient-3;
+            }
+        }
+
+        .list-item,
+        .blog-portfolio-content ul li
+        {
+            &::before
+            {
+                background-color: $main-color;
+            }
+        }
+
+        a.breadcrumbs-link.alternate-color
+        {
+            color: $third-color;
+        }
+
+        .main-navigation-link
+        {
+            color: $nav-link-color;
+
+            &::after
+            {
+                background-color: $main-color;
+            }
+        }
+
+        .link-button,
+        .privacy-cookies-button,
+        .main-button-blue
+        {
+            color:            $white;
+            background-color: $main-color;
+            transition:       background-color .3s;
+
+            &:hover
+            {
+                background-color: $main-color-hover;
+            }
+
+            &:active
+            {
+                background-color: $main-color-active;
+            }
+        }
+
+        .thanks-page-button
+        {
+            color:        $main-color;
+            border-color: $main-color;
+            transition:   all .3s;
+
+            &:hover,
+            &:active
+            {
+                background-color: $lighter-gray;
+            }
+        }
+
+        .contact-attachment
+        {
+            .outlined
+            {
+                color:        $dark-gray;
+                border-color: $black;
+                transition:   background-color .3s;
+
+                &:hover,
+                &:active
+                {
+                    color:        $main-color;
+                    border-color: $main-color;
+
+                    &.MuiButton-root:hover
+                    {
+                        background-color: transparent;
+                    }
+
+                    .icon-trash path
+                    {
+                        fill: $main-color;
+                    }
+                }
+
+                &:active
+                {
+                    background-color: $lighter-gray !important;
+                }
+            }
+
+            .attach-file-mark .question-mark-svg
+            {
+                path
+                {
+                    transition: fill .3s;
+                    fill:       $dark-gray;
+                }
+
+                &:hover
+                {
+                    path
+                    {
+                        fill: $main-color;
+                    }
+                }
+            }
+        }
+
+        .footer-social-item a
+        {
+            .icon-social-svg path
+            {
+                transition: fill .3s;
+                fill:       $black;
+            }
+
+            &:hover
+            {
+                .icon-social-svg path
+                {
+                    fill: $main-color;
+                }
+            }
+
+            &:active
+            {
+                .icon-social-svg path
+                {
+                    fill: $main-color-hover;
+                }
+            }
+        }
+
+        .blog-portfolio-content .colored-titles-table table tr:nth-of-type(odd) td:first-of-type
+        {
+            color: $third-color;
+        }
+
+        .contact-form .main-text-field-label.focused
+        {
+            color: $second-color;
+        }
+
+        .contact-form
+        {
+            .text-input-field.focused:not(.error) .main-text-field-input
+            {
+                border-color: $second-color;
+            }
+
+            .main-text-field-fieldset
+            {
+                border: none;
+            }
+        }
+
+        .table-top-bordered,
+        .top-image-bordered-columns-number,
+        .top-bordered-columns-item,
+        .table-ticks-row:first-of-type,
+        .azure-table,
+        .home-tabs-item.Mui-selected,
+        .legenda.top-bordered .legenda-item:first-child,
+        .image-grid-bordered-caption-text,
+        .table-top-subtext-item
+        {
+            @if $name == 'primary-scheme' {
+                border-image-source: linear-gradient(279.09deg, $gradient-1 0%, $gradient-2 15.7%, $primary-gradient-3 51.03%, $gradient-3 90.95%);
+            } @else if $name == 'tertiary-scheme' {
+                border-image-source: linear-gradient(90deg, $gradient-1 0%, $gradient-2 43.75%, $tertiary-gradient-3 71.35%, $tertiary-gradient-4 100%);
+            } @else if $name == 'secondary-scheme' {
+                border-image-source: linear-gradient(90.64deg, $gradient-1 0%, $gradient-2 50.52%, $gradient-3 100%);
+            } @else if $name == 'quaternary-scheme' {
+                border-image-source: linear-gradient(90.64deg, $circle-gradient-1 0%, $circle-gradient-2 39.06%, $circle-gradient-4 100%);
+            } @else {
+                border-image-source: linear-gradient(90deg, $gradient-1 0%, $gradient-2 60%, $gradient-3 100%);
+            }
+
+            border-image-slice:  1;
+        }
+
+        .top-bordered-columns table tr td p:nth-child(1)
+        {
+            @if $name == 'primary_1' {
+                background-image: linear-gradient(279.09deg, $primary-gradient-1 0%, $primary-gradient-2 15.7%, $primary-gradient-3 51.03%, $primary-gradient-4 90.95%);
+            } @else if $name == 'tertiary_1' {
+                background-image: linear-gradient(90deg, $tertiary-gradient-1 0%, $tertiary-gradient-2 43.75%, $tertiary-gradient-3 71.35%, $tertiary-gradient-4 100%);
+            } @else if $name == 'secondary_1' {
+                background-image: linear-gradient(90.64deg, $gradient-1 0%, $gradient-2 50.52%, $gradient-3 100%);
+            } @else if $name == 'quaternary_1' {
+                background-image: linear-gradient(90deg, $gradient-1 0%, $gradient-2 60%, $gradient-3 100%);
+            } @else {
+                background-image: linear-gradient(90deg, $gradient-1 0%, $gradient-2 60%, $gradient-3 100%);
+            }
+
+            border-image-slice:  1;
+        }
+
+        .tabs-item-device::before,
+        .blog-portfolio-content table thead,
+        .top-bordered-table table:not([class]) tr:first-child,
+        table.table-top-border-colored tbody td:before,
+        .image-grid-bordered-caption-text.halved-border:before,
+        .copy-columns-table table td:before,
+        .blog-portfolio-paragraphs table > tbody tr:first-of-type
+        {
+            background-image: linear-gradient(90deg, $gradient-1 0%, $gradient-2 60%, $gradient-3 90.95%);
+        }
+
+        .cards-title-wrapper
+        {
+            .swiper-button-next .icon-arrow-svg path,
+            .swiper-button-prev .icon-arrow-svg path
+            {
+                @if $name == 'primary-scheme' or $name == 'primary_1'{
+                    stroke: $pink;
+                } @else if $name == 'tertiary-scheme' or $name == 'tertiary_1'{
+                    stroke: $orange;
+                } @else if $name == 'secondary-scheme' or $name == 'secondary_1' {
+                    stroke: $red;
+                } @else if $name == 'quaternary-scheme' or $name == 'quaternary_1'{
+                    stroke: $turquoise;
+                }
+            }
+        }
+
+        .tabs-item.active::before,
+        .tabs-row-item.active::before,
+        .tabs-column-item.active::before,
+        .mdc-tab-indicator.mdc-tab-indicator--active .mdc-tab-indicator__content--underline
+        {
+            @if $name == 'primary-scheme' {
+                background-image: linear-gradient(279.09deg, $gradient-1 0%, $gradient-2 15.7%, $circle-gradient-2 51.03%, $gradient-3 90.95%);
+            } @else if $name == 'form-scheme' {
+                background-image: linear-gradient(279.09deg, $primary-gradient-1 0%, $primary-gradient-2 15.7%, $primary-gradient-3 51.03%, $primary-gradient-4 90.95%)
+            } @else if $name == 'secondary-scheme' {
+                background-image: linear-gradient(90.64deg, $gradient-1 0%, $gradient-2 50.52%, $gradient-3 100%);
+            } @else if $name == 'homepage' {
+                background-image: linear-gradient(279.09deg, $primary-gradient-1 0%, $primary-gradient-2 15.7%, $primary-gradient-3 51.03%, $primary-gradient-4 90.95%)
+            } @else if $name == 'quaternary-scheme' {
+                background-image: linear-gradient(90.64deg, $circle-gradient-1 0%, $circle-gradient-2 39.06%, $circle-gradient-4 100%)
+            }@else {
+                background-image: linear-gradient(90deg, $gradient-1 0%, $gradient-2 43.75%, $gradient-3 71.35%, $circle-gradient-4 100%);
+            }
+        }
+
+        .blog-portfolio-content .left-bordered-table table
+        {
+            border-image-source: linear-gradient(0deg, $gradient-1 27%, $gradient-2 58%, $gradient-3 100%);
+            border-image-slice:  1;
+        }
+
+        .scheme-rec-outstanding-scheme
+        {
+            background-color: rgba($fourth-color, .5);
+        }
+
+        .background-theme .scheme-row-blocks-inner
+        {
+            background-color: $fourth-color-opacity-hover;
+        }
+
+        .callout-stripe,
+        .callout-stripe-copy-small,
+        .cta
+        {
+            background-color: $fourth-color;
+        }
+
+        .callout-stripe-button,
+        .callout-stripe-small,
+        .callout-stripe-button-small,
+        .home-tabs-button
+        {
+            background-color: $third-color;
+        }
+
+        .callout-stripe-button,
+        .callout-stripe-button-small
+        {
+            background-color: $third-color;
+            border:           1px solid $third-color;
+            transition:       all .3s;
+
+            &::after
+            {
+                background-color: $third-color;
+                transition: background-color .3s;
+            }
+
+            &:hover
+            {
+                background-color: $third-color-hover;
+                border-color:     $third-color-hover;
+
+                &::after
+                {
+                    background-color: $third-color-hover;
+                }
+            }
+
+            &:active
+            {
+                background-color: $third-color-active;
+
+                &::after
+                {
+                    background-color: $third-color-active;
+                }
+            }
+        }
+
+        // .cards .swiper-slide:nth-child(5n+5) .cards-item
+        // {
+        //     @media #{v.$tablet-max-1024}
+        //     {
+        //         background-color: $fourth-color;
+        //     }
+        // }
+
+        .link-arrow,
+        .link-arrow-single,
+        .link-arrow-small,
+        .icon-chevron-svg,
+        .blog-related-cases-next,
+        .blog-related-cases-prev
+        {
+            svg,
+            path
+            {
+                stroke: $third-color;
+            }
+        }
+
+        .checked-icon rect
+        {
+            fill: $third-color;
+        }
+
+        .contact-attachment .file-checkbox .checked-icon path
+        {
+            fill:$third-color;
+        }
+
+        .link-arrow,
+        .link-arrow-small,
+        .link-arrow-single-inner,
+        .accordion-icon
+        {
+            transition: background-color .3s;
+
+            &:hover,
+            &:active
+            {
+                background-color: $super-light-gray;
+            }
+
+            &:active svg.icon-arrow-svg path
+            {
+                stroke: $third-color-active;
+            }
+        }
+
+        .title-link-wrapper:hover .link-arrow-single-inner
+        {
+            background-color: $super-light-gray;
+        }
+
+        .quote-svg
+        {
+            fill: $third-color;
+        }
+
+        .icon-theme
+        {
+            path
+            {
+                stroke: $main-color;
+            }
+        }
+
+        .icon-fill-theme
+        {
+            path
+            {
+                fill: $main-color;
+            }
+        }
+
+        .theme-color
+        {
+            color: $main-color;
+        }
+
+        .svg-border-gradient,
+        .sub-text-image-grid-wrapper
+        {
+            @if $name == 'quaternary-scheme' {
+                background: linear-gradient($white, $white) padding-box,
+                    linear-gradient(90.64deg, $circle-gradient-1 0%, $circle-gradient-2 39.06%, $circle-gradient-4 100%) border-box;
+            } @else if $name == 'tertiary-scheme' {
+                background: linear-gradient($white, $white) padding-box,
+                    linear-gradient(90deg, $gradient-1 0%, $gradient-2 43.75%, $gradient-3 71.35%, $tertiary-gradient-4 100%) border-box;
+            } @else if $name == 'secondary-scheme' {
+                background: linear-gradient($white, $white) padding-box,
+                    linear-gradient(90.64deg, $gradient-1 0%, $gradient-2 50.52%, $gradient-3 100%) border-box;
+            } @else {
+                background: linear-gradient($white, $white) padding-box,
+                    linear-gradient(270deg, $gradient-1 0%, $gradient-2 15.7%, $primary-gradient-3 51.03%, $gradient-3 90.95%) border-box;
+            }
+        }
+
+        .background-theme
+        {
+            background-color: $main-color;
+
+            *
+            {
+                color: $white;
+            }
+
+            svg
+            {
+                opacity: 0.9;
+            }
+
+            .list-item,
+            .table-quote-list-item.with-marker
+            {
+                &::before
+                {
+                    background-color: $third-color;
+                }
+            }
+
+            .link-arrow,
+            .link-arrow-small,
+            .link-arrow-single-inner,
+            .accordion-icon
+            {
+                &:hover,
+                &:active
+                {
+                    background-color: $fourth-color-opacity-hover;
+                }
+            }
+
+            .title-link-wrapper
+            {
+                &:hover .link-arrow-single-inner
+                {
+                    background-color: rgba($pure-black,0.1);
+                }
+
+                &:active
+                {
+                    .link-arrow-single-inner svg.icon-arrow-svg path,
+                    .link-arrow-single-inner svg.icon-arrow-svg
+                    {
+                        stroke: $third-color-active;
+                    }
+                }
+            }
+
+            .svg-border-gradient,
+            .sub-text-image-grid-wrapper
+            {
+                @if $name == 'quaternary-scheme' {
+                    background: linear-gradient($main-color, $main-color) padding-box,
+                        linear-gradient(90.64deg, $circle-gradient-1 0%, $circle-gradient-2 39.06%, $circle-gradient-4 100%) border-box;
+                } @else if $name == 'tertiary-scheme' {
+                    background: linear-gradient($main-color, $main-color) padding-box,
+                        linear-gradient(90deg, $gradient-1 0%, $gradient-2 43.75%, $gradient-3 71.35%, $tertiary-gradient-4 100%) border-box;
+                } @else if $name == 'secondary-scheme' {
+                    background: linear-gradient($main-color, $main-color) padding-box,
+                        linear-gradient(90.64deg, $gradient-1 0%, $gradient-2 50.52%, $gradient-3 100%) border-box;
+                } @else {
+                    background: linear-gradient($main-color, $main-color) padding-box,
+                        linear-gradient(270deg, $gradient-1 0%, $gradient-2 15.7%, $primary-gradient-3 51.03%, $gradient-3 90.95%) border-box;
+                }
+            }
+        }
+
+        .background-theme-second
+        {
+            background-color: $fourth-color;
+
+            *
+            {
+                color: $white;
+            }
+
+            .link-arrow,
+            .link-arrow-small,
+            .link-arrow-single-inner,
+            .accordion-icon
+            {
+                &:hover,
+                &:active
+                {
+                    background-color: $fourth-color-opacity-hover;
+                }
+            }
+
+            .title-link-wrapper:hover .link-arrow-single-inner
+            {
+                background-color: $fourth-color-opacity-hover;
+            }
+        }
+
+        .background-light-gray
+        {
+            .link-arrow,
+            .link-arrow-small,
+            .link-arrow-single-inner,
+            .accordion-icon
+            {
+                &:hover,
+                &:active
+                {
+                    background-color: $lighter-gray;
+                }
+            }
+
+            .title-link-wrapper:hover .link-arrow-single-inner
+            {
+                background-color: $lighter-gray;
+            }
+
+            .svg-border-gradient,
+            .sub-text-image-grid-wrapper
+            {
+                @if $name == 'quaternary-scheme' {
+                    background: linear-gradient($super-light-gray, $super-light-gray) padding-box,
+                        linear-gradient(90.64deg, $circle-gradient-1 0%, $circle-gradient-2 39.06%, $circle-gradient-4 100%) border-box;
+                } @else if $name == 'tertiary-scheme' {
+                    background: linear-gradient($super-light-gray, $super-light-gray) padding-box,
+                        linear-gradient(90deg, $gradient-1 0%, $gradient-2 43.75%, $gradient-3 71.35%, $tertiary-gradient-4 100%) border-box;
+                } @else if $name == 'secondary-scheme' {
+                    background: linear-gradient($super-light-gray, $super-light-gray) padding-box,
+                        linear-gradient(90.64deg, $gradient-1 0%, $gradient-2 50.52%, $gradient-3 100%) border-box;
+                } @else {
+                    background: linear-gradient($super-light-gray, $super-light-gray) padding-box,
+                        linear-gradient(270deg, $gradient-1 0%, $gradient-2 15.7%, $primary-gradient-3 51.03%, $gradient-3 90.95%) border-box;
+                }
+            }
+        }
+
+        .theme-gradient-background
+        {
+            background: linear-gradient(90deg, $gradient-1 0%, $gradient-2 60%, $gradient-3 100%);
+        }
+
+        .cards-item
+        {
+            &:nth-child(1),
+            &:nth-child(6)
+            {
+                background-color: $main-color;
+            }
+
+            &:nth-child(3),
+            &:nth-child(7)
+            {
+                background-color: $fourth-color;
+            }
+
+            &:nth-child(1),
+            &:nth-child(6),
+            &:nth-child(3),
+            &:nth-child(7)
+            {
+                *
+                {
+                    color: $white;
+                }
+            }
+        }
+
+        .blog-related-cases-item
+        {
+            &:first-child,
+            &:nth-child(3n + 4)
+            {
+                background-color: $fourth-color;
+
+                *
+                {
+                    color: $white;
+                }
+            }
+
+            &:nth-child(3n + 2)
+            {
+                background-color: $main-color;
+
+                *
+                {
+                    color: $white;
+                }
+            }
+
+            &:nth-child(3n+3)
+            {
+                background-color: $super-light-gray;
+            }
+        }
+
+        .side-info-menu-item
+        {
+            &.active
+            {
+                color: $third-color;
+            }
+        }
+
+        .blog-portfolio-issue
+        {
+            color: $gradient-1;
+        }
+
+        .blog-portfolio-fix
+        {
+            color: $gradient-3;
+        }
+
+        .blog-portfolio-gallery-item img:hover
+        {
+            filter: drop-shadow(0px 4px 12px rgba($main-color, 0.12));
+        }
+
+        .blog-portfolio-gallery-scrollbar
+        {
+            .swiper-scrollbar-drag
+            {
+                background-color: $main-color;
+            }
+        }
+
+        // .main-navigation-menu-multi,
+        // .main-navigation-menu-single
+        // {
+        //     .link
+        //     {
+        //         &:hover:not(.page-404-layout)
+        //         {
+        //             @media #{v.$laptop-min-1025}
+        //             {
+        //                 color: $second-color;
+        //             }
+        //         }
+        //     }
+        // }
+
+        .share-menu-link
+        {
+            &.open,
+            &:hover
+            {
+                border-color: $main-color;
+
+                .share-menu-text
+                {
+                    color: $main-color;
+                }
+
+                .share-menu-icon
+                {
+                    path
+                    {
+                        stroke: $main-color;
+                    }
+                }
+            }
+        }
+
+        .share-menu-list
+        {
+            .share-menu-list-item
+            {
+                &:hover,
+                &:active
+                {
+                    .share-menu-list-link.react-share__ShareButton
+                    {
+                        color: $main-color !important;
+                    }
+
+                    .icon-social-svg
+                    {
+                        path
+                        {
+                            fill: $main-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        .share-list
+        {
+            .share-list-item button
+            {
+                svg path
+                {
+                    fill: $fourth-color;
+                }
+
+                &:hover,
+                &:active
+                {
+                    svg path
+                    {
+                        fill: $main-color-hover;
+                    }
+                }
+            }
+        }
+
+        .blog-categories-item
+        {
+            &:hover
+            {
+                color: $fourth-color;
+            }
+
+            &.active
+            {
+                color:            $white;
+                background-color: $fourth-color;
+            }
+        }
+
+        .case-studies-tabs-item
+        {
+            &:hover,
+            &.active
+            {
+                color: $gradient-3;
+            }
+        }
+
+        .industries-page-healthcare-links a:hover
+        {
+            color: $second-color;
+        }
+
+        .table-quote-wrapper svg path
+        {
+            fill: $third-color;
+        }
+    }
+}
+
+@include theme(
+    primary-scheme,
+    $blue, $blue-hover,
+    $blue-active,
+    $light-blue,
+    $pink,
+    $pink-hover,
+    $pink-active,
+    $primary-gradient-1,
+    $primary-gradient-2,
+    $primary-gradient-4,
+    $dark-blue,
+    $dark-blue-hover-opacity,
+    $white,
+    $primary-gradient-2,
+    $primary-gradient-3,
+    $primary-gradient-4
+);
+@include theme(
+    secondary-scheme,
+    $green,
+    $green-hover,
+    $green-active,
+    $light-green,
+    $red,
+    $red-hover,
+    $red-active,
+    $secondary-gradient-1,
+    $light-purple,
+    $secondary-gradient-3,
+    $dark-green,
+    $dark-green-hover-opacity,
+    $white,
+    $tertiary-gradient-1,
+    $tertiary-gradient-2,
+    $lilac
+);
+@include theme(
+    tertiary-scheme,
+    $burgundy,
+    $burgundy-hover,
+    $burgundy-active,
+    $lilac,
+    $orange,
+    $orange-hover,
+    $orange-active,
+    $tertiary-gradient-1,
+    $tertiary-gradient-2,
+    $tertiary-gradient-3,
+    $dark-burgundy,
+    $dark-burgundy-hover-opacity,
+    $white,
+    $tertiary-gradient-1,
+    $tertiary-gradient-2,
+    $lilac
+);
+@include theme(
+    quaternary-scheme,
+    $medium-purple,
+    $medium-purple-hover,
+    $medium-purple-active,
+    $purple,
+    $turquoise,
+    $turquoise-hover,
+    $turquoise-active,
+    $turquoise,
+    $medium-blue,
+    $purple,
+    $dark-purple,
+    $dark-purple-hover-opacity,
+    $white,
+    $turqouise-light,
+    $dust-blue,
+    $violet
+);
+
+@include theme(
+    homepage,
+    $blue,
+    $blue-hover,
+    $blue-active,
+    $light-blue,
+    $pink,
+    $pink-hover,
+    $pink-active,
+    $pink,
+    $light-purple,
+    $light-blue,
+    $dark-blue,
+    $dark-blue-hover-opacity,
+    $black,
+    $tertiary-gradient-1,
+    $tertiary-gradient-2,
+    $lilac
+);
+
+@include theme(
+    form-scheme,
+    $blue,
+    $blue-hover,
+    $blue-active,
+    $light-blue,
+    $pink,
+    $pink-hover,
+    $pink-active,
+    $pink,
+    $light-purple,
+    $light-blue,
+    $dark-blue,
+    $dark-blue-hover-opacity,
+    $black,
+    $tertiary-gradient-1,
+    $tertiary-gradient-2,
+    $lilac
+);
+
+//Blog portfolio schemes
+@include theme(
+    primary_1,
+    $blue, $blue-hover,
+    $blue-active,
+    $light-blue,
+    $pink,
+    $pink-hover,
+    $pink-active,
+    $pink,
+    $light-purple,
+    $light-blue,
+    $dark-blue,
+    $dark-blue-hover-opacity,
+    $white,
+    $tertiary-gradient-1,
+    $tertiary-gradient-2,
+    $lilac
+);
+@include theme(
+    secondary_1,
+    $green,
+    $green-hover,
+    $green-active,
+    $light-green,
+    $red,
+    $red-hover,
+    $red-active,
+    $red,
+    $light-purple,
+    $light-green,
+    $dark-green,
+    $dark-green-hover-opacity,
+    $white,
+    $tertiary-gradient-1,
+    $tertiary-gradient-2,
+    $lilac
+);
+@include theme(
+    tertiary_1,
+    $burgundy,
+    $burgundy-hover,
+    $burgundy-active,
+    $lilac,
+    $orange,
+    $orange-hover,
+    $orange-active,
+    $orange,
+    $red,
+    $lilac,
+    $dark-burgundy,
+    $dark-burgundy-hover-opacity,
+    $white,
+    $tertiary-gradient-1,
+    $tertiary-gradient-2,
+    $lilac
+);
+@include theme(
+    quaternary_1,
+    $medium-purple,
+    $medium-purple-hover,
+    $medium-purple-active,
+    $purple,
+    $turquoise,
+    $turquoise-hover,
+    $turquoise-active,
+    $turquoise,
+    $medium-blue,
+    $purple,
+    $dark-purple,
+    $dark-purple-hover-opacity,
+    $white,
+    $tertiary-gradient-1,
+    $tertiary-gradient-2,
+    $lilac
+);
+
+.background-light-gray
+{
+    background-color: $super-light-gray;
+}

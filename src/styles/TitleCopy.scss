@@ -1,0 +1,56 @@
+@use '../styles/variables.scss' as v;
+
+.title-copy-columns
+{
+    &:not(.single)
+    {
+        padding-bottom: v.$middle-padding;
+
+        @media #{v.$tablet-max-1024}
+        {
+            padding-bottom: v.$middle-margin;
+        }
+    }
+
+    &.padding-small
+    {
+        &:not(.single)
+        {
+            padding-bottom: 36px;
+        }
+    }
+
+    .paragraph,
+    .paragraph-bolder
+    {
+        @media #{v.$laptop-min-1025}
+        {
+            padding-top: 10px;
+        }
+
+        @media #{v.$large-tablet}
+        {
+            padding-top: 6px;
+        }
+
+        &.paragraph-no-padding-top
+        {
+            padding-top: 0;
+        }
+    }
+
+    &.in-copy-boxes
+    {
+        max-width: v.$content-area;
+    }
+}
+
+.title-copy-rows + *
+{
+    margin-top: v.$middle-margin;
+
+    @media #{v.$tablet-max-1024}
+    {
+        margin-top: v.$default-padding;
+    }
+}
