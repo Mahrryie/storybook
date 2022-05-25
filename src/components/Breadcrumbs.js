@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/index.scss';
 import PropTypes from 'prop-types';
 
 const Breadcrumbs = ({links, pageName, className, nullLinks = false, nullLink = '', nullTitle = '', color}) => {
@@ -28,6 +27,7 @@ const Breadcrumbs = ({links, pageName, className, nullLinks = false, nullLink = 
 export default Breadcrumbs;
 
 Breadcrumbs.propTypes = {
+    color: PropTypes.string,
     links: PropTypes.array,
     pageName: PropTypes.string,
     className: PropTypes.string,
@@ -37,7 +37,8 @@ Breadcrumbs.propTypes = {
 }
 
 Breadcrumbs.defaultProps = {
-    links: Array,
+    color: 'primary',
+    links: [],
     pageName: '',
     className: '',
     nullLinks: false,

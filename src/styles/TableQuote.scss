@@ -1,0 +1,104 @@
+@use './variables' as v;
+
+.table-quote
+{
+    &-grid
+    {
+        display: flex;
+
+        @media #{v.$small-tablet-max-767}
+        {
+            margin-bottom: v.$default-mobile-padding;
+        }
+    }
+
+    &-text
+    {
+        margin-left: 12px;
+        font-size:   20px;
+        font-style:  italic;
+        line-height: 1.4;
+
+        @media #{v.$tablet-max-1024}
+        {
+            font-size: 16px;
+        }
+    }
+
+    &-subtext
+    {
+        font-size:   16px;
+        line-height: 1.5;
+    }
+
+    &-list-grid
+    {
+        max-width: v.$small-container-area;
+
+        .title-link-wrapper
+        {
+            margin-bottom: 0;
+
+            @media #{v.$small-tablet-max-767}
+            {
+                margin-bottom: v.$default-mobile-padding;
+            }
+        }
+    }
+
+    &-list
+    {
+        &.list
+        {
+            grid-column-gap:       v.$default-padding;
+            grid-template-columns: repeat(2, 280px);
+            margin-top:            v.$small-margin;
+
+            @media #{v.$tablet-max-1024}
+            {
+                grid-template-columns: repeat(2, 230px);
+            }
+
+            @media #{v.$small-tablet-max-767}
+            {
+                display:               inline-grid;
+                grid-template-columns: repeat(2, auto);
+                margin-top:            0;
+            }
+
+            &.columns-two .table-quote-list-item:nth-last-child(-n+2)
+            {
+                padding-bottom: 0;
+            }
+        }
+
+        &-item
+        {
+            padding-bottom: v.$small-margin;
+            color:          $black;
+            font-weight:    300;
+            font-size:      16px;
+            line-height:    1.25;
+
+            &.with-marker
+            {
+                position: relative;
+                margin-left:    20px;
+
+                &::before
+                {
+                    position:      absolute;
+                    top:           0;
+                    left:          0;
+                    align-items:   center;
+                    width:         10px;
+                    height:        10px;
+                    margin-left:   -20px;
+                    border-radius: 100%;
+                    transform:     translateY(5px);
+                    content:       '';
+                }
+            }
+        }
+    }
+}

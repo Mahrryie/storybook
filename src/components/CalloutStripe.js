@@ -1,5 +1,6 @@
 import React from 'react';
-import '../styles/index.scss';
+import PropTypes from 'prop-types';
+import ContainerDefault from './ContainerDefault';
 
 const CalloutStripe = ({item, containerClass = '', colorScheme = ''}) => {
     return (
@@ -23,16 +24,11 @@ const CalloutStripe = ({item, containerClass = '', colorScheme = ''}) => {
 };
 
 const CalloutStripeSmall = ({item, calloutClass = '', colorScheme=''}) => {
-    let width;
-
-    if (window.innerWidth >= 1025) {
-        width = '50%'
-    } else {
-        width = 'initial'
-    }
     return (
-        <div className={`${colorScheme}-scheme`} style={{width: width}}>
-        <div className={`cta-small ${calloutClass}`}>
+        <>
+        <div className='has-half-cta-after' style={{height: '200px'}}/>
+        <ContainerDefault containerClass={`section container half-callout-wrapper ${colorScheme}-scheme`}>
+            <div className={`cta-small ${calloutClass}`}>
             <div className='callout-stripe-copy-small'>
                 <div className='callout-stripe-text'>
                     <h4 className='callout-stripe-title'>{item.field_description.value}</h4>
@@ -46,20 +42,33 @@ const CalloutStripeSmall = ({item, calloutClass = '', colorScheme=''}) => {
                 </svg>
             </a>
         </div>
-        </div>
+        </ContainerDefault>
+        </>
     );
 };
 
 export {CalloutStripe, CalloutStripeSmall};
 
+CalloutStripe.propTypes = {
+    colorScheme: PropTypes.string,
+    item: PropTypes.object,
+    containerClass: PropTypes.string,
+}
+
+CalloutStripeSmall.propTypes = {
+    colorScheme: PropTypes.string,
+    item: PropTypes.object,
+    calloutClass: PropTypes.string,
+}
+
 CalloutStripe.defaultProps = {
+    colorScheme: '',
     item: {},
     containerClass: '',
-    colorScheme: '',
 };
 
 CalloutStripeSmall.defaultProps = {
+    colorScheme: '',
     item: {},
     calloutClass: '',
-    colorScheme: ''
 };

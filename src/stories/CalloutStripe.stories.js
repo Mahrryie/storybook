@@ -15,13 +15,13 @@ export default {
         },
         containerClass: {
           type: 'string',
-          description: 'Set callout classes',
+          description: 'Sets callout classes',
           defaultValue: '',
-          options: ['extra-height-cta'],
+          options: ['extra-height-cta', ''],
           control: {
-            type: 'select'
+            type: 'radio'
           }
-        }
+        },
       }
 }
 
@@ -52,9 +52,10 @@ Small.args = {
   colorScheme: 'primary',
   item: {
     field_description: {
-      value: 'Make SAP Commerce your key enabler in the experience economy',
+      value: 'Connect to your customers in a new way with Itransition’s CRM solutions',
     },
     field_title: 'Contact us',
     field_secondary_description: 'with Itransition.'
-  }
+  },
+  calloutClass: ''
 };

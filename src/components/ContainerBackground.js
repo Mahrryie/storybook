@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles/ContainerBackground.css';
-import '../styles/reset.css';
 import PropTypes from 'prop-types';
 
 const ContainerBackground = ({children, containerClass = 'background-theme', grandContent, backgroundColor}) => {

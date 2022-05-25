@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/reset.css';
 import '../styles/typography.scss';
 
 const TitleThird = ({title, titleClass, titleNumber}) => {

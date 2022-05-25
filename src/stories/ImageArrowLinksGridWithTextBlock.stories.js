@@ -1,4 +1,6 @@
 import ImageArrowLinksGridWithTextBlock from "../components/ImageArrowLinksGridWithTextBlock";
+import List from '../components/List';
+import TitleThid from '../components/TitleSecond';
 
 export default {
     title: 'ImageArrowLinksGridWithTextBlock',
@@ -27,18 +29,23 @@ export default {
             options: ['', 'medium-bold']
         },
         backgroundClass: {
-            type: 'String',
+            type: 'string',
             description: 'Sets overall wrapper CSS class',
+            options: ['', 'background-light-gray'],
+            control: {
+                type: 'select'
+            }
         },
         halvedItemClass: {
             type: 'String',
             description: 'Sets halved-item CSS class (not with image)',
         },
         content: {
-            type: 'String',
+            type: 'array',
             description: 'Optionally inserted content',
         },
         imageTitleLink: {
+            type: 'boolean',
             description: 'Link occurence in header'
         },
         imageTitleLinkClass: {
@@ -52,22 +59,10 @@ export default {
 
 const Template = (args) => <ImageArrowLinksGridWithTextBlock {...args}/>;
 
-export const CustomContentMarkup = Template.bind({});
-CustomContentMarkup.args = {
-    backgroundClass: '',
-    imageTitleLink: false,
-    items: [{
-        field_title: 'Application services',
-        field_description: {
-            value: 'Our software development company delivers corporate and consumer applications based on our profound understanding of technologies and the markets they operate in. With our professional mindset, we look beyond technology to offer viable solutions for your particular business context.'
-        }
-    }],
-    content: <p>Some custom content</p>,
-    colorScheme: 'primary'
-};
+export const Default = Template.bind({});
+Default.args = {
 
-export const Predefined = Template.bind({});
-Predefined.args = {
+    colorScheme: 'primary',
     backgroundClass: '',
     imageTitleLink: false,
     items: [{
@@ -90,6 +85,30 @@ Predefined.args = {
             },
             field_link: '/'
     }],
-    content: false,
-    colorScheme: 'primary'
+    content: null,
+};
+
+
+export const MarkupCustom = Template.bind({});
+MarkupCustom.args = {
+    colorScheme: 'primary',
+    backgroundClass: '',
+    imageTitleLink: false,
+    items: [{
+        field_title: 'Application services',
+        field_description: {
+            value: 'Our software development company delivers corporate and consumer applications based on our profound understanding of technologies and the markets they operate in. With our professional mindset, we look beyond technology to offer viable solutions for your particular business context.'
+        }
+    }],
+    content: (<>
+        <TitleThid title='Why choose Itransition as your CRM consulting partner'/>
+        <List items={[
+            'Legacy systems',
+            'ERP',
+            'Supply chain management systems',
+            'Ecommerce platforms',
+            'Voice of the customer tools',
+            'Accounting and billing systems',
+            'Helpdesks']}/>
+    </>),
 };

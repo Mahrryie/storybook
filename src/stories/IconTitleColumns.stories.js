@@ -39,6 +39,14 @@ export default {
         items: {
             type: 'object',
             description: 'Used as a main prop instance for passing data.'
+        },
+        titleClass: {
+            type: 'string',
+            description: 'Sets title link wrapper CSS class',
+            options: ['', 'second-level-title', 'third-level-title', 'fourth-level-title', 'fifth-level-title'],
+            control: {
+                type: 'select'
+            }
         }
     }
 
@@ -63,7 +71,8 @@ Default.args = {
     titleTextClass: '',
     titleClass: '',
     isMarkedList: false,
-    number: 3
+    number: 3,
+    colorScheme: 'primary',
 }
 
 export const withList = Template.bind({});
@@ -82,6 +91,7 @@ withList.args = {
     titleTextClass: '',
     titleClass: '',
     isMarkedList: true,
+    colorScheme: 'primary',
 };
 
 export const withLink = Template.bind({});
@@ -90,7 +100,12 @@ withLink.args = {
     numberOfChildren: 3,
     title: 'Financial transactions',
     icon: icon,
-    text: 'Applying their expertise in smart contracts, Itransition’s team delivered blockchain app development on top of Hyperledger for end users to securely manage transactions regarding patent licensing and sales.',
+    listItems: [
+        'Macro- and micropayments',
+        'Global transactions',
+        'Multi-currency wallets',
+        'Cryptocurrency fundraising'
+    ],
     link: '/finance',
     iconTitleColumnsClass: '',
     titleTextClass: '',

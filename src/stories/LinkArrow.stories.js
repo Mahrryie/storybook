@@ -27,7 +27,15 @@ export default {
             control: {
                 type: 'radio'
             }
-        }
+        },
+        textClass: {
+            type: 'string',
+            description: 'Sets CSS class to subtext',
+            options: ['', 'medium-bold', 'medium-bold-700', 'anyClass-thinner'],
+            control: {
+              type: 'select'
+            }
+          },
     }
 
 }
@@ -37,7 +45,6 @@ const Template = (args) => <LinkArrow {...args}/>;
 export const Default = Template.bind({});
 Default.args = {
     text: 'Manufacturing is one of those industries which is as complex as it looks. We develop EMR solutions that help cut down on paperwork and refine decision making thanks to interoperability with your clinical systems as data sources. Recognizing the need for unification and standardization, we are also open to developing universal electronic medical records systems.',
-    titleClass: 'second-level-title',
     link: '/link',
     linkClass: '',
     textClass: '',

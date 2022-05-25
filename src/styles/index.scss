@@ -2,8 +2,9 @@
 @import './mixins.scss';
 @import './colors.scss';
 
+@import './general.scss';
 @import './typography.scss';
-@import './reset.css';
+@import './reset.scss';
 @import './ContainerBackground.css';
 @import './ContainerDefault.css';
 @import './LinkArrow.scss';
@@ -16,3 +17,15 @@
 @import './LandingQuote.scss';
 @import './ImageArrowLinksGrid.scss';
 @import './ImageGridBorderedCaption.scss';
+@import './ListBlockLinks.scss';
+@import './Tabs.scss';
+@import './ShareMenu.scss';
+@import './SideMenu.scss';
+@import './SubTextImage.scss';
+@import './Table.scss';
+@import './TableQuote.scss';
+@import './TableTopSubText.scss';
+@import './TitleCopyBoxes.scss';
+@import './TobBorderedColumnsGrid';
+@import './TopImageBorderedColumns.scss';
+@import './Links.scss';

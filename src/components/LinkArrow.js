@@ -1,5 +1,6 @@
 import React from 'react';
-import '../styles/index.scss';
+import ContainerDefault from './ContainerDefault';
+import PropTypes from 'prop-types';
 
 const LinkArrow = ({link, text, linkClass = '', textClass = '', colorScheme}) => {
     let color;
@@ -15,6 +16,7 @@ const LinkArrow = ({link, text, linkClass = '', textClass = '', colorScheme}) =>
     } 
 
     return (
+        <ContainerDefault>
         <a className={`link-arrow-single ${link ? '' : 'link-arrow-empty'} ${text ? 'has-text' :  ''} ${linkClass}`} to={link}>
             {text && <p className={`link-text ${textClass}`}>{text}</p>}
             {link &&
@@ -25,11 +27,19 @@ const LinkArrow = ({link, text, linkClass = '', textClass = '', colorScheme}) =>
                 </span>
             }
         </a>
+        </ContainerDefault>
     );
 };
 
 export default LinkArrow;
 
+LinkArrow.propTypes = {
+    link: PropTypes.string,
+    text: PropTypes.string,
+    linkClass: PropTypes.string,
+    textClass: PropTypes.string,
+    colorScheme: PropTypes.string,
+}
 
 LinkArrow.defaultProps = {
     link: '',

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../styles/index.scss';
 import Cat from '../assets/cat1.jpeg';
 import TitleLink from './TitleLink';
 
@@ -14,7 +13,7 @@ const ImageArrowLinksGridWithTextBlock = ({
     content,
     imageTitleLink,
     imageTitleLinkClass = '',
-    colorScheme}) => {
+    colorScheme = 'primary'}) => {
     return (
         <div className={`section main-grid image-arrow-links ${backgroundClass} ${colorScheme}-scheme`}>
             <div className={'halved-content-image-item background-theme'}>
@@ -30,7 +29,9 @@ const ImageArrowLinksGridWithTextBlock = ({
                         </>
                     }
                 </div>
-                <img alt='image' src={Cat} className={imageClass} style={{height: '400px'}}/>
+                <div className='gatsby-image-wrapper clear-top-padding'>
+                    <img alt='image' src={Cat} className={imageClass}/>
+                </div>
             </div>
             <div className={`halved-content-item ${halvedItemClass}`}>
                 {!content && <div className='container-small'>
@@ -53,3 +54,29 @@ const ImageArrowLinksGridWithTextBlock = ({
 };
 
 export default ImageArrowLinksGridWithTextBlock;
+
+ImageArrowLinksGridWithTextBlock.propTypes = {
+    items: PropTypes.array,
+    imageHeaderClass: PropTypes.string,
+    imageClass: PropTypes.string,
+    textClass: PropTypes.string,
+    backgroundClass: PropTypes.string,
+    halvedItemClass: PropTypes.string,
+    content: PropTypes.array,
+    imageTitleLink: PropTypes.bool,
+    imageTitleLinkClass: PropTypes.string,
+    colorScheme: PropTypes.string
+}
+
+ImageArrowLinksGridWithTextBlock.defaultProps = {
+    items: [],
+    imageHeaderClass:'',
+    imageClass: '',
+    textClass: '',
+    backgroundClass: '',
+    halvedItemClass: '',
+    content: [],
+    imageTitleLink: false,
+    imageTitleLinkClass: '',
+    colorScheme: 'primary'
+}

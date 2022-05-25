@@ -1,5 +1,5 @@
 @use 'sass:math';
-@use '../styles//variables.scss' as v;
+@use './variables' as v;
 
 .icon-title-item
 {
@@ -76,6 +76,7 @@
 
 .icon-title-columns
 {
+    display:               -ms-inline-grid;
     display:               inline-grid;
     grid-gap:              v.$default-padding;
     grid-template-columns: auto auto;
@@ -107,6 +108,7 @@
 
     &.one-row.columns-5
     {
+        display:               -ms-grid;
         display:               grid;
         -ms-grid-columns:      1fr v.$default-padding 1fr v.$default-padding 1fr v.$default-padding 1fr v.$default-padding 1fr;
         grid-template-columns: repeat(5, 1fr);
@@ -374,6 +376,7 @@
 
     &.columns-3
     {
+        display:               -ms-grid;
         display:               grid;
         -ms-grid-columns:      1fr v.$default-padding 1fr v.$default-padding 1fr;
         grid-template-columns: repeat(3, 1fr);
@@ -470,7 +473,7 @@
     svg
     {
         width:        32px;
-        min-width:    32px; 
+        min-width:    32px;
         height:       32px;
         margin-right: 10px;
     }

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../styles/index.scss';
 import Cat from '../assets/cat3.jpeg';
 import LinkArrow from './LinkArrow';
 
@@ -18,12 +17,12 @@ const ImageGridBorderedCaptionContent = ({items, imageClass, subTextClass, halve
             return (
                 <div key={field_title} className='image-grid-bordered-caption-item main-grid-item'>
                     {field_image &&
+                     <div className='gatsby-image-wrapper clear-top-padding'>
                         <img
                             src={field_image}
                             alt=''
-                            className={`image-grid-bordered-caption-img ${imageClass}`}
-                            style={{width: '100%', height: '280px'}}
-                        />
+                            className={`image-grid-bordered-caption-img ${imageClass}`}/>
+                        </div>
                     }
                     <div className={`image-grid-bordered-caption-text ${halvedBorder ? 'halved-border': ''} ${!field_secondary_description || !field_list ? 'image-grid-empty' : ''}`}>
                         {field_secondary_description ? <p className={`caption-name medium-bold ${subTextClass}`}>{field_secondary_description}</p> : null}
@@ -44,11 +43,21 @@ export {ImageGridBorderedCaption, ImageGridBorderedCaptionContent};
 ImageGridBorderedCaption.propTypes = {
     children: PropTypes.array,
     colorScheme: PropTypes.string,
+    items: PropTypes.array,
+    imageClass: PropTypes.string,
+    subTextClass: PropTypes.string,
+    halvedBorder: PropTypes.bool,
+    titleClass: PropTypes.string,
 }
 
 ImageGridBorderedCaption.defaultProps = {
     children: [],
-    colorScheme: '',
+    colorScheme: 'primary',
+    items: [],
+    imageClass: '',
+    subTextClass: '',
+    halvedBorder: false,
+    titleClass: '',
 }
 
 ImageGridBorderedCaptionContent.propTypes = {
@@ -60,7 +69,7 @@ ImageGridBorderedCaptionContent.propTypes = {
 }
 
 ImageGridBorderedCaptionContent.defaultProps = {
-    quote: [],
+    items: [],
     imageClass: '',
     subTextClass: '',
     halvedBorder: false,

@@ -49,7 +49,8 @@
 
     @media #{v.$small-tablet-max-767}
     {
-        display: block;
+        display:       block;
+        padding-bottom: #{math.div(v.$callout-button-mobile-height, 2)};
     }
 
     .callout-stripe-button
@@ -66,7 +67,6 @@
 
         @media #{v.$large-tablet}
         {
-            min-height:  v.$callout-button-tablet-height;
             padding:     0 v.$default-mobile-padding;
             font-size:   20px;
             line-height: v.$callout-button-tablet-height;
@@ -75,6 +75,8 @@
         @media #{v.$small-tablet-max-767}
         {
             @include callout-mobile-button;
+            max-height: v.$callout-button-mobile-height;
+            top:        calc(100% - #{math.div(v.$callout-button-mobile-height, 2)});
         }
 
         .icon-arrow-svg
@@ -165,7 +167,8 @@
 
     @media #{v.$small-tablet-max-767}
     {
-        overflow: initial;
+        overflow:       initial;
+        padding-bottom: #{math.div(v.$callout-button-mobile-height, 2)};
     }
 
     .callout-stripe-button-small
@@ -183,8 +186,10 @@
 
         .blog-portfolio-section-inner &
         {
-            position: absolute;
-            left:     799px;
+            position:    absolute;
+            left:        699px;
+            @include     fifth-level-title($main-color: $white);
+            line-height: 88px;
 
             @media only screen and (min-width: (v.$laptop-1280 + 1))
             {
@@ -197,9 +202,9 @@
                 }
             }
 
-            @media only screen and (max-width: 1700px)
+            @media only screen and (max-width: 1800px)
             {
-                left: 80%;
+                left: 70%;
             }
 
             @media #{v.$cta-breakpoint}
@@ -207,15 +212,25 @@
                 left: 60%;
             }
 
+            @media (max-width: v.$laptop-1439)
+            {
+                left: 50%;
+            }
+
+            @media #{v.$tablet-max-1024}
+            {
+                left: 60%;
+            }
+
+            @media only screen and (max-width: v.$small-tablet-end-767)
+            {
+                left: 0%;
+            }
+
             @media only screen and (min-width: v.$large-tablet-start-768) and (max-width: v.$laptop-1280)
             {
                 height:       v.$callout-tablet-button-height;
                 padding-left: v.$default-padding;
-            }
-
-            @media #{v.$mobile-portrait}
-            {
-                left: 20%;
             }
         }
 
@@ -238,6 +253,8 @@
             justify-content: center;
             min-height:      0;
             font-weight:     700;
+            max-height:      v.$callout-button-mobile-height;
+            top:             calc(100% - #{math.div(v.$callout-button-mobile-height, 2)});
         }
 
         &::after
@@ -272,21 +289,34 @@
         display:     flex;
         align-items: center;
         max-width:   814px;
+        height:      v.$callout-button-height;
         padding:     0 v.$default-padding 0 v.$large-padding;
 
         .blog-portfolio-section-inner &
         {
             width:     100%;
-            max-width: none;
+            max-width: 699px;
 
-            @media only screen and (min-width: v.$large-tablet-start-768) and (max-width: v.$laptop-pro-start-1440)
+            @media (max-width: 1800px) and (min-width: 1450px)
             {
-                width: 60%;
+                width: 70%;
             }
 
-            @media (max-width: 1600px) and (min-width: 1450px)
+            @media only screen and (max-width: v.$laptop-pro-start-1440)
             {
-                width: 80%;
+                width:     60%;
+                min-width: 60%;
+            }
+
+            @media only screen and (min-width: v.$laptop-1025) and (max-width: v.$laptop-1439)
+            {
+                width:     50%;
+                min-width: 50%;
+            }
+
+            @media only screen and (max-width: v.$small-tablet-end-767)
+            {
+                width: 100%;
             }
         }
 
@@ -340,6 +370,11 @@
     @media #{v.$small-tablet-max-767}
     {
         font-weight: 700;
+    }
+
+    .blog-portfolio-section &
+    {
+        @include fifth-level-title($main-color: $white);
     }
 }
 
@@ -496,7 +531,7 @@
             @media #{v.$small-tablet-max-767}
             {
                 margin-top:  0;
-                padding-top: v.$default-mobile-section-margin + v.$callout-button-mobile-height;
+                padding-top: calc(#{v.$default-mobile-section-margin} + #{math.div(v.$callout-button-mobile-height, 2)});
             }
         }
 
@@ -541,7 +576,7 @@
 
                 @media #{v.$small-tablet-max-767}
                 {
-                    padding-top: v.$default-mobile-section-margin + v.$callout-button-mobile-height;
+                    padding-top: calc(#{v.$default-mobile-section-margin} + #{math.div(v.$callout-button-mobile-height, 2)});
                 }
             }
 
@@ -624,7 +659,7 @@
 
         + .copy-image-accordion.section .halved-content-item
         {
-            @media #{v.$laptop-max-1280}
+            @media #{v.$tablet-max-1024}
             {
                 padding-top: v.$default-mobile-section-margin;
             }
@@ -911,7 +946,7 @@
             @media #{v.$small-tablet-max-767}
             {
                 margin-top:  0;
-                padding-top: v.$default-mobile-section-margin + v.$callout-button-mobile-height;
+                padding-top: calc(#{v.$default-mobile-section-margin} + #{math.div(v.$callout-button-mobile-height, 2)});
             }
         }
 
@@ -960,7 +995,7 @@
 
                 @media #{v.$small-tablet-max-767}
                 {
-                    padding-top: v.$default-mobile-section-margin + v.$callout-button-mobile-height;
+                    padding-top: calc(#{v.$default-mobile-section-margin} + #{math.div(v.$callout-button-mobile-height, 2)});
                 }
             }
 
@@ -1013,6 +1048,17 @@
                 {
                     padding-top: v.$default-mobile-section-margin + v.$callout-button-mobile-height;
                 }
+            }
+        }
+    }
+
+    + .half-callout-wrapper.section.container
+    {
+        + .copy-image-accordion.section .halved-content-item-accordion
+        {
+            @media (min-width: v.$laptop-1025) and (max-width: v.$laptop-1280)
+            {
+                padding-top: v.$default-section-margin + math.div(v.$callout-button-height, 2);
             }
         }
     }
@@ -1094,6 +1140,20 @@
 {
     margin-bottom: 0;
 
+    .accordion + .cta-small
+    {
+        @media (min-width: v.$laptop-1025) and (max-width: v.$laptop-1280)
+        {
+            min-width: 850px;
+
+            .callout-stripe-button-small
+            {
+                padding-left: v.$default-padding;
+                max-width:    400px;
+            }
+        }
+    }
+
     .cta-small
     {
         width:       calc(100% + 72px * 2);
@@ -1131,7 +1191,7 @@
         {
             position:   absolute;
             right:      0;
-            bottom:     math.div(v.$cta-desktop-height, 2);
+            bottom:     math.div(-$cta-desktop-height, 2);
             left:       0;
             width:      auto;
             margin:     0;
@@ -1182,7 +1242,7 @@
         .main-grid-outstanding-item-right
         {
             position:       relative;
-            padding-bottom: v.$default-section-margin + math.div(v.$cta-desktop-height, 2);
+            padding-bottom: v.$default-section-margin + math.div($cta-desktop-height, 2);
 
             @media #{v.$laptop-max-1280}
             {
@@ -1208,7 +1268,7 @@
 
             @media #{v.$small-tablet-max-767}
             {
-                padding-top: v.$default-mobile-section-margin + v.$callout-button-mobile-height;
+                padding-top: calc(#{v.$default-mobile-section-margin} + #{math.div(v.$callout-button-mobile-height, 2)});
             }
         }
     }
@@ -1232,7 +1292,7 @@
         @media #{v.$small-tablet-max-767}
         {
             margin-top:  0;
-            padding-top: v.$default-mobile-section-margin + v.$callout-button-mobile-height;
+            padding-top: calc(#{v.$default-mobile-section-margin} + #{math.div(v.$callout-button-mobile-height, 2)});
         }
     }
 
@@ -1257,8 +1317,8 @@
     }
 }
 
-// .has-half-cta-inside.section,
-// .has-half-cta-inside.wrapped-grid
-// {
-//     @include has-half-cta-inside;
-// }
+.has-half-cta-inside.section,
+.has-half-cta-inside.wrapped-grid
+{
+    @include has-half-cta-inside;
+}

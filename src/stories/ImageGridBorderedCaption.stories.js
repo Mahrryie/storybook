@@ -55,7 +55,11 @@ export default {
         },
         subTextClass: {
           type: 'string',
-          description: 'Sets CSS class to subtext'
+          description: 'Sets CSS class to subtext',
+          options: ['second-level-title', 'third-level-title', 'fourth-level-title', 'fifth-level-title', 'extra-bold'],
+          control: {
+            type: 'select'
+          }
         },
       }
 }
@@ -136,6 +140,7 @@ withoutSecondaryDescription.args = {
     },
     field_title: 'Consulting',
     field_image: Cat,
+    field_list: ['soon'],
   }],
   containerClass: '',
   halvedBorder: false,

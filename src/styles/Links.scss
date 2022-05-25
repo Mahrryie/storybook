@@ -1,0 +1,155 @@
+@use './variables' as v;
+
+@mixin icon-square()
+{
+    @include flex-center;
+    position: absolute;
+    right:    0;
+    bottom:   -1px;
+    width:    v.$icon-square-size;
+    height:   v.$icon-square-size;
+    border:   1px solid $medium-gray;
+}
+
+a
+{
+    @include november-font;
+
+    &:hover
+    {
+        cursor: pointer;
+    }
+}
+
+.link-button
+{
+    padding:       10px 30px;
+    line-height:   19px;
+    border-radius: 30px;
+
+    &.primary
+    {
+        padding: 18px 30px;
+    }
+}
+
+.link-arrow
+{
+    @include icon-square;
+
+    &:hover
+    {
+        cursor: pointer;
+    }
+}
+
+.link-arrow-small
+{
+    @include flex-center;
+    width:  v.$small-icon-square-size;
+    height: v.$small-icon-square-size;
+    border: 1px solid $medium-gray;
+
+    svg
+    {
+        width:  19px;
+        height: 17px;
+    }
+}
+
+.icon-arrow-svg
+{
+    transition: .3s ease;
+}
+
+.link-text
+{
+    margin-bottom: v.$icon-square-size + 11px;
+
+    &.extra-text-margin
+    {
+        margin-bottom: calc(#{v.$icon-square-size} + #{v.$middle-margin});
+
+        @media #{v.$small-tablet-max-767}
+        {
+            margin-bottom: calc(#{v.$icon-square-size} + #{v.$default-mobile-padding});
+        }
+    }
+}
+
+.link-arrow-single
+{
+    position:       relative;
+    display:        block;
+    border-bottom:  1px solid $medium-gray;
+    pointer-events: none;
+
+    &.link-arrow-empty
+    {
+        border-bottom: none;
+
+        .link-text
+        {
+            margin-bottom: 0;
+        }
+    }
+
+    &:not(.has-text)
+    {
+        padding-top: v.$icon-square-size + 12px;
+    }
+
+    &.link-arrow-margin
+    {
+        margin-top: v.$middle-margin;
+    }
+}
+
+.link-arrow-single-inner
+{
+    @include icon-square;
+    pointer-events: auto;
+}
+
+.machine-learning-page
+{
+    .link-arrow-single
+    {
+        float:         right;
+        width:         v.$icon-square-size;
+        height:        v.$icon-square-size;
+        padding-top:   0;
+        border-bottom: none;
+
+        &::after
+        {
+            position:         absolute;
+            right:            0;
+            bottom:           0;
+            display:          block;
+            width:            1000%;
+            height:           1px;
+            background-color: $medium-gray;
+            content:          '';
+        }
+    }
+
+    p
+    {
+        overflow: hidden;
+    }
+}
+
+.link-arrow,
+.link-arrow-small,
+.link-arrow-single-inner
+{
+    &:hover,
+    .title-link-wrapper:hover &
+    {
+        .icon-arrow-svg
+        {
+            transform: translateX(v.$arrow-link-hover-transform);
+        }
+    }
+}

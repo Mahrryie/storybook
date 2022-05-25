@@ -1,0 +1,61 @@
+@use './variables' as v;
+
+.top-image-bordered-columns
+{
+    &-image.gatsby-image-wrapper
+    {
+        width:  100%;
+        height: 280px;
+    }
+
+    &-pretitle
+    {
+        margin: 32px 0;
+    }
+
+    &-number
+    {
+        display:     block;
+        width:       46%;
+        padding:     8px 0;
+        font-weight: 800;
+        line-height: 1.2;
+        border-top:  4px solid;
+    }
+
+    &-item
+    {
+        @media #{v.$small-tablet-max-767}
+        {
+            margin-bottom: 40px;
+        }
+
+        &:last-child
+        {
+            @media #{v.$small-tablet-max-767}
+            {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &-subtext
+    {
+        color: $pure-black;
+    }
+
+    &-title.link-hover:hover
+    {
+        text-decoration: underline;
+    }
+
+    .title-link-wrapper
+    {
+        margin-bottom: 0;
+
+        .title-link
+        {
+            margin-bottom: v.$small-margin;
+        }
+    }
+}

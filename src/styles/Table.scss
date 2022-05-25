@@ -1,0 +1,370 @@
+@use './variables' as v;
+
+.table-row
+{
+    display: flex;
+    padding: 28px 0;
+
+    @media #{v.$small-tablet-max-767}
+    {
+        flex-direction: column;
+    }
+
+    &:first-of-type
+    {
+        padding-top: 0;
+    }
+
+    &:last-of-type
+    {
+        padding-bottom: 0;
+    }
+
+    &:not(:last-of-type)
+    {
+        border-bottom: 1px solid $medium-gray;
+    }
+}
+
+.table-title
+{
+    width: 32%;
+
+    @media #{v.$large-tablet}
+    {
+        width: 25%;
+    }
+
+    @media #{v.$small-tablet-max-767}
+    {
+        width:         100%;
+        margin-bottom: v.$default-mobile-padding;
+    }
+}
+
+.table-list
+{
+    display:       flex;
+    flex-wrap:     wrap;
+    width:         68%;
+    margin-bottom: -20px;
+
+    @media #{v.$large-tablet}
+    {
+        width: 75%;
+    }
+
+    @media #{v.$small-tablet-max-767}
+    {
+        width: 100%;
+    }
+}
+
+.table-list-item
+{
+    width:         25%;
+    margin-bottom: 20px;
+    padding:       0 v.$default-padding;
+    color:         $black;
+    font-weight:   300;
+    line-height:   1.25;
+
+    @media #{v.$small-tablet-max-767}
+    {
+        width:   50%;
+        padding: 0 v.$default-padding 0 0;
+    }
+}
+
+.table-ticks
+{
+    display:        flex;
+    flex-direction: column;
+}
+
+.table-ticks-row
+{
+    display:     flex;
+    align-items: center;
+
+    &:first-of-type
+    {
+        border-bottom: 4px solid $medium-gray;
+    }
+
+    &:not(:first-of-type)
+    {
+        padding: v.$default-padding 0;
+
+        &:not(:last-of-type)
+        {
+            border-bottom: 1px solid $medium-gray;
+        }
+    }
+
+    &:last-of-type
+    {
+        padding-bottom: 0;
+    }
+}
+
+.table-top-bordered
+{
+    border-top: 4px solid;
+
+    .title-number
+    {
+        margin-right: 12px;
+    }
+
+    .table-top-bordered-row .main-grid-item h4,
+    .table-top-bordered-row .main-grid-item .fourth-level-title
+    {
+        display:     flex;
+        line-height: 30px;
+    }
+
+    .table-top-bordered-row .main-grid-item h5,
+    .table-top-bordered-row .main-grid-item .fifth-level-title
+    {
+        line-height: 24px;
+    }
+
+    &-container .table-title-columns h4
+    {
+        margin-bottom: 24px;
+    }
+}
+
+.table-top-bordered-row
+{
+    padding:       28px 0;
+    border-bottom: 1px solid $medium-gray;
+
+    &:last-of-type
+    {
+        padding-bottom: 0;
+        border-bottom:  none;
+    }
+
+    .title-link-wrapper
+    {
+        margin-bottom: 0;
+    }
+
+    &.main-grid
+    {
+        .table-quote-wrapper
+        {
+            display:     flex;
+            align-items: center;
+            font-style:  italic;
+            margin-top:  v.$small-margin;
+
+            p
+            {
+                line-height: 28px;
+                font-size:   20px;
+            }
+
+            svg
+            {
+                margin-right: 13px;
+            }
+        }
+    }
+}
+
+.table-ticks-item
+{
+    padding-right: 20px;
+
+    &:first-of-type
+    {
+        width: 40%;
+    }
+
+    &:not(:first-of-type)
+    {
+        width:      30%;
+        text-align: center;
+    }
+}
+
+//Specific table classes
+.table-configuration
+{
+    margin-bottom: v.$semi-large-margin;
+
+    @media #{v.$small-tablet-max-767}
+    {
+        margin-bottom: v.$middle-margin;
+    }
+}
+
+.table-cloud
+{
+    margin-bottom: v.$middle-margin;
+    padding-top:   v.$middle-padding;
+
+    @media #{v.$tablet-max-1024}
+    {
+        padding-top: v.$middle-margin;
+    }
+}
+
+.table-top-bordered-columns-three
+{
+    .table-top-bordered-row
+    {
+        .main-grid-item
+        {
+            &:not(:first-of-type)
+            {
+                @media #{v.$small-tablet-max-767}
+                {
+                    flex: 1 1 50%;
+                }
+            }
+
+            &:first-of-type
+            {
+                @media #{v.$small-tablet-max-767}
+                {
+                    order:         1;
+                    margin-bottom: 28px;
+                }
+            }
+
+            &:nth-child(2)
+            {
+                @media #{v.$small-tablet-max-767}
+                {
+                    order:         2;
+                    margin-bottom: 24px;
+                }
+            }
+
+            &:nth-child(3)
+            {
+                @media #{v.$small-tablet-max-767}
+                {
+                    order: 4;
+                }
+            }
+
+            &:nth-child(4)
+            {
+                @media #{v.$small-tablet-max-767}
+                {
+                    order:         3;
+                    margin-bottom: 24px;
+                }
+            }
+
+            &:nth-child(5)
+            {
+                @media #{v.$small-tablet-max-767}
+                {
+                    order: 5;
+                }
+            }
+
+            .title-bolder
+            {
+                @media #{v.$small-tablet-max-767}
+                {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+.table-top-bordered-columns-four
+{
+    .table-top-bordered-row
+    {
+        .main-grid-item
+        {
+            &:not(:first-of-type)
+            {
+                @media #{v.$small-tablet-max-767}
+                {
+                    flex: 1 1 50%;
+                }
+            }
+
+            &:first-of-type
+            {
+                @media #{v.$small-tablet-max-767}
+                {
+                    order:         1;
+                    margin-bottom: 28px;
+                }
+            }
+
+            &:nth-child(2)
+            {
+                @media #{v.$small-tablet-max-767}
+                {
+                    order:         2;
+                    margin-bottom: 24px;
+                }
+            }
+
+            &:nth-child(3)
+            {
+                @media #{v.$small-tablet-max-767}
+                {
+                    order:         4;
+                    margin-bottom: 24px;
+                }
+            }
+
+            &:nth-child(4)
+            {
+                @media #{v.$small-tablet-max-767}
+                {
+                    order:         6;
+                    margin-bottom: 24px;
+                }
+            }
+
+            &:nth-child(5)
+            {
+                @media #{v.$small-tablet-max-767}
+                {
+                    order:         3;
+                    margin-bottom: 24px;
+                }
+            }
+
+            &:nth-child(6)
+            {
+                @media #{v.$small-tablet-max-767}
+                {
+                    order:         5;
+                    margin-bottom: 24px;
+                }
+            }
+
+            &:nth-child(7)
+            {
+                @media #{v.$small-tablet-max-767}
+                {
+                    order:         7;
+                    margin-bottom: 24px;
+                }
+            }
+
+            .title-bolder
+            {
+                @media #{v.$small-tablet-max-767}
+                {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../styles/index.scss';
+import TitleCopyRows from './TitleCopyRows';
+import Acordion from './accordion/Acordion';
 
 const CopyAccordion = ({
     titleCopyRowsItems,
@@ -25,7 +27,7 @@ const CopyAccordion = ({
                 }
             </div>
             <div className='halved-content-item'>
-                <Accordion items={accordionItems}/>
+                <Acordion items={accordionItems}/>
                 {calloutItem &&
                     <CalloutStripeSmall item={calloutItem} calloutClass={calloutClass}/>
                 }

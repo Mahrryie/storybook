@@ -14,12 +14,8 @@ export default {
           }
         },
         nullLinks: {
-          description: 'Add a dummy string, if parent page still in progress',
-          defaultValue: 'null',
-          options: ['Add a dummy', 'null'],
-          control: {
-            type: 'radio'
-          }
+          type: 'boolean',
+          description: 'Add a dummy string, if parent page still in progress. Works in connection with nullTitle & nullLink',
         },
         nullTitle: {
           description: 'Dummy page name. See nullLinks prop',
@@ -36,10 +32,11 @@ const Template = (args) => (
 
 export const Default = Template.bind({});
 Default.args = { 
+  color: 'primary',
   links: [{title: 'Healthcare', path: {alias: '/healthcare'}}],
   pageName: 'StoryBook page',
   nullLinks: false,
   nullTitle: '',
   className: '',
-  nullLink: ''
+  nullLink: '',
 };

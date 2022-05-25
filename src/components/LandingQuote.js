@@ -1,8 +1,9 @@
-import '../styles/index.scss';
 import PropTypes from 'prop-types';
+import ContainerDefault from './ContainerDefault';
 
 const LandingQuote = ({title, quote, colorScheme}) => {
     return (
+        <ContainerDefault>
         <div className={`quote-block background-light-gray ${colorScheme}-scheme`}>
             {title && <h4 className='quote-block-title'>{title}</h4>}
             <div className='quote-block-text'>
@@ -18,6 +19,7 @@ const LandingQuote = ({title, quote, colorScheme}) => {
                 </div>
             </div>
         </div>
+        </ContainerDefault>
     )
 }
 

@@ -36,7 +36,7 @@ const IconTitleColumnsContent = ({title, link, text, listItems, titleClass, icon
             </> :
             <>
                 {text && <Paragraph item={text}/>}
-                {listItems && <List items={listItems} listClass='list-top-padding'/>}
+                {listItems && <List items={listItems} listClass='list-top-padding' colorScheme={colorScheme}/>}
                 {link && <LinkArrow link={link} colorScheme={colorScheme}/>}
             </>
         }
@@ -62,6 +62,6 @@ IconTitleColumns.defaultProps = {
     titleTextClass: '',
     titleClass: '',
     isMarkedList: false,
-    colorScheme: '',
+    colorScheme: 'primary',
     number: 3,
 }

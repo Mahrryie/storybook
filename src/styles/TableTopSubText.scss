@@ -1,0 +1,35 @@
+@use './variables' as v;
+
+.table-top-subtext
+{
+    &-item
+    {
+        padding-top: 8px;
+        border-top:  4px solid;
+
+        .table-top-title
+        {
+            margin-bottom: 8px;
+        }
+    }
+
+    + .paragraph
+    {
+        margin-top: v.$default-padding;
+
+        @media #{v.$small-tablet-max-767}
+        {
+            margin-top: 28px;
+        }
+    }
+
+    svg + &
+    {
+        margin-top: v.$default-padding;
+
+        @media #{v.$small-tablet-max-767}
+        {
+            margin-top: 28px;
+        }
+    }
+}
