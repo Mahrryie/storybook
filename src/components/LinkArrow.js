@@ -16,7 +16,6 @@ const LinkArrow = ({link, text, linkClass = '', textClass = '', colorScheme}) =>
     } 
 
     return (
-        <ContainerDefault>
         <a className={`link-arrow-single ${link ? '' : 'link-arrow-empty'} ${text ? 'has-text' :  ''} ${linkClass}`} to={link}>
             {text && <p className={`link-text ${textClass}`}>{text}</p>}
             {link &&
@@ -27,7 +26,6 @@ const LinkArrow = ({link, text, linkClass = '', textClass = '', colorScheme}) =>
                 </span>
             }
         </a>
-        </ContainerDefault>
     );
 };
 

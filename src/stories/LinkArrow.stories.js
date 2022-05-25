@@ -1,3 +1,4 @@
+import ContainerDefault from '../components/ContainerDefault';
 import LinkArrow from '../components/LinkArrow';
 
 export default {
@@ -40,7 +41,7 @@ export default {
 
 }
 
-const Template = (args) => <LinkArrow {...args}/>;
+const Template = (args) => <ContainerDefault><LinkArrow {...args}/></ContainerDefault>;
 
 export const Default = Template.bind({});
 Default.args = {
