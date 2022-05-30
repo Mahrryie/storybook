@@ -176,7 +176,7 @@ $accordion-title-top-offset: 11px;
 {
     display:        flex;
     align-items:    center;
-    transition:     all $basic-hover-transition ease;
+    transition:     all v.$basic-hover-transition ease;
     pointer-events: none;
 
     .opened &

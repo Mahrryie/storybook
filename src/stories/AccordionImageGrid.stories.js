@@ -1,8 +1,9 @@
-import Accordion from '../components/accordion/Accordion';
+import AccordionImageGrid from '../components/AccordionImageGrid';
+import Img from '../assets/healthcare-iot-related.jpg';
 
 export default {
-    title: 'Accordion/Accordion',
-    component: Accordion,
+    title: 'Accordion/AccordionImageGrid',
+    component: AccordionImageGrid,
     argTypes: {
         colorScheme: {
           type: 'string',
@@ -17,7 +18,7 @@ export default {
 }
 
 const Template = (args) => (
-    <Accordion {...args}/>
+    <AccordionImageGrid {...args}/>
 );
 
 export const NOTREADY = Template.bind({});
@@ -37,13 +38,11 @@ NOTREADY.args = {
         link: '/healthcare'
     },
     {
-        title: "Testing",
+        title: "Consulting",
         content: <p> We will put your software through rigorous testing to ensure its highest level of security and stable performance under regular and peak load </p>,
         link: '/healthcare'
     }],
-    featuredAccordion: false,
-    titleLinkOffset: false,
-    accordionOffsetName: '',
-    extraHeight: false,
+    imageName: Img,
+    sectionClass: '',
     colorScheme: 'primary'
 };

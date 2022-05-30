@@ -1,8 +1,7 @@
 import React, {useEffect} from 'react';
-import AcordionItem from './AcordionItem';
-import PropTypes from 'prop-types';
+import AccordionItem from './AccordionItem';
 
-const Accordion = ({items, featuredAccordion = false, titleLinkOffset = false, accordionOffsetName = '', extraHeight = false}) => {
+const Accordion = ({items, featuredAccordion = false, titleLinkOffset = false, accordionOffsetName = '', extraHeight = false, colorScheme = 'primary'}) => {
     const accordion = React.useRef(null);
     const [openedIndex, setOpenedIndex] = React.useState(0);
     const [maxHeight, setMaxHeight] = React.useState(0);
@@ -28,6 +27,18 @@ const Accordion = ({items, featuredAccordion = false, titleLinkOffset = false, a
 
     const accordionTotalHeight = accordionStartHeight - defaultItemContent + maxHeight;
 
+    let color;
+
+    if (colorScheme == 'primary') {
+        color = '#FF04D5';
+    } else if (colorScheme == 'secondary') {
+        color = '#F8374E';
+    } else if (colorScheme == 'tertiary') {
+        color = '#FB7700';
+    } else if (colorScheme == 'quaternary') {
+        color = '#21E0DD';
+    } 
+
     return (
         <div
             className='accordion'
@@ -41,7 +52,7 @@ const Accordion = ({items, featuredAccordion = false, titleLinkOffset = false, a
                 const lessIndexClicked = openedIndex > index;
 
                 return (
-                    <AcordionItem
+                    <AccordionItem
                         lesserIndex={lessIndexClicked}
                         accordionOffsetName={accordionOffsetName}
                         title={title}
@@ -53,6 +64,7 @@ const Accordion = ({items, featuredAccordion = false, titleLinkOffset = false, a
                         link={link}
                         updateMaxHeight={updateMaxHeight}
                         updateOpenedHeight={setDefaultItemContent}
+                        color={color}
                     />
                 );
             })}
@@ -61,20 +73,3 @@ const Accordion = ({items, featuredAccordion = false, titleLinkOffset = false, a
 };
 
 export default Accordion;
-
-Accordion.propTypes = {
-    items: PropTypes.array,
-    featuredAccordion: PropTypes.bool,
-    titleLinkOffset: PropTypes.bool,
-    accordionOffsetName: PropTypes.string,
-    extraHeight: PropTypes.bool,
-}
-
-Accordion.defaultProps = {
-    items: [],
-    featuredAccordion: false,
-    titleLinkOffset: false,
-    accordionOffsetName: '',
-    extraHeight: false,
-};
-

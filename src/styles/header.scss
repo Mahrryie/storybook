@@ -1,0 +1,293 @@
+@use './variables' as v;
+
+$hamburger-stripe-height: 3px;
+
+.header
+{
+    position:   fixed;
+    top:        0;
+    right:      0;
+    left:       0;
+    z-index:    15;
+    padding:    v.$header-top-position 0;
+    transition: all 0.4s ease-in-out;
+
+    @media #{v.$navigation-device-view}
+    {
+        padding: v.$default-padding 0;
+    }
+
+    &.form + .main-contact-us-page
+    {
+        margin-top: 160px;
+    }
+
+    &.sticky
+    {
+        @media #{v.$navigation-desktop-view}
+        {
+            padding:          v.$header-top-position-sticky 0 v.$header-bottom-position;
+            background-color: $white;
+            box-shadow:       0 4px 12px rgba(8, 46, 181, 0.12);
+        }
+
+        @media #{v.$navigation-device-view}
+        {
+            padding: 18px 0;
+        }
+
+        .main-navigation-link:not(.link-button)
+        {
+            color: $pure-black;
+
+            .something-wrong-layout &,
+            .main-navigation-link &
+            {
+                color: $white;
+            }
+        }
+
+        .icon-logo-svg
+        {
+            @media #{v.$navigation-device-view}
+            {
+                display: none;
+            }
+
+            path
+            {
+                fill: $pure-black;
+            }
+        }
+
+        .hamburger-container
+        {
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            user-select: none;
+
+            &:not(.close)
+            {
+                @media #{v.$navigation-device-view}
+                {
+                    top:              22px;
+                    right:            14px;
+                    min-width:        56px;
+                    margin-right:     -2px;
+                    padding:          16px 14px;
+                    background-color: $white;
+                    border-radius:    100%;
+                    box-shadow:       0 4px 12px rgba(8, 46, 181, 0.12);
+                }
+            }
+        }
+
+        .hamburger-stripe
+        {
+            @media #{v.$navigation-device-view}
+            {
+                background-color: $pure-black;
+            }
+
+            &::before,
+            &::after
+            {
+                @media #{v.$navigation-device-view}
+                {
+                    background-color: $pure-black;
+                }
+            }
+        }
+
+        .devices-opened
+        {
+            .icon-logo-svg
+            {
+                @media #{v.$navigation-device-view}
+                {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &-logo-link
+    {
+        transition: v.$basic-hover-transition ease;
+
+        &:hover
+        {
+            transform: translateY(-2px);
+        }
+    }
+
+    .homepage &
+    {
+        width: 100%;
+    }
+}
+
+.header-clone
+{
+    width:     100%;
+    max-width: v.$content-area;
+    margin:    0 auto;
+    padding:   v.$header-top-position 0;
+
+    @media #{v.$small-desktop-view, v.$large-tablet-landscape}
+    {
+        width:  auto;
+        margin: 0 v.$default-padding;
+    }
+
+    @media #{v.$navigation-device-view}
+    {
+        width:  auto;
+        margin: 0 v.$default-mobile-padding;
+    }
+
+    .sticky &,
+    .sticky .main-navigation-menu.opened &
+    {
+        @media #{v.$navigation-desktop-view}
+        {
+            padding: v.$header-top-position-sticky 0 v.$header-bottom-position;
+        }
+    }
+
+    .link-logo
+    {
+        position: relative;
+        z-index:  1;
+    }
+
+    .icon-logo-svg
+    {
+        position: relative;
+
+        path
+        {
+            fill: $pure-black;
+
+            .opened &
+            {
+                fill: $white;
+            }
+
+            .opened.opened-0 &
+            {
+                fill: $pure-black;
+            }
+        }
+    }
+
+    .main-navigation-link:not(.link-button)
+    {
+        color: $pure-black;
+    }
+}
+
+.header-inner
+{
+    display:         flex;
+    align-items:     center;
+    justify-content: space-between;
+
+    @media #{v.$navigation-device-view}
+    {
+        padding: 0 12px 0 4px;
+    }
+
+    .sticky &
+    {
+        padding: 0;
+    }
+}
+
+.hamburger-container
+{
+    position: absolute;
+    top:      37px;
+    right:    26px;
+
+    @media #{v.$navigation-desktop-view}
+    {
+        display: none;
+    }
+
+    &.close
+    {
+        position: absolute;
+        top:      37px;
+        right:    27.5px;
+        z-index:  2;
+        width:    25px;
+        height:   25px;
+    }
+}
+
+.hamburger
+{
+    @include flex-center;
+    position: relative;
+    height:   25px;
+    cursor:   pointer;
+    width:    28px;
+}
+
+.hamburger-stripe
+{
+    position:         absolute;
+    width:            100%;
+    height:           $hamburger-stripe-height;
+    background-color: $white;
+    transition:       75ms, transform 75ms cubic-bezier(.55,.055,.675,.19);
+
+    &::before,
+    &::after
+    {
+        position:         absolute;
+        left:             0;
+        width:            100%;
+        height:           $hamburger-stripe-height;
+        background-color: $white;
+        content:          '';
+    }
+
+    &::before
+    {
+        top:        -9px;
+        transition: top 75ms ease .12s,opacity 75ms;
+    }
+
+    &::after
+    {
+        bottom:     -9px;
+        transition: bottom 75ms ease .12s, transform 75ms cubic-bezier(.55,.055,.675,.19);
+    }
+
+    .close &
+    {
+        background-color:           $pure-black;
+        transition-delay:          .12s;
+        transition-timing-function: cubic-bezier(.215,.61,.355,1);
+        transform:                  rotate(45deg);
+
+        &::before
+        {
+            top:        0;
+            transition: top 75ms ease,opacity 75ms ease .12s;
+            opacity:    0;
+            height:     $hamburger-stripe-height;
+        }
+
+        &::after
+        {
+            bottom:           0;
+            height:           $hamburger-stripe-height;
+            background-color: $pure-black;
+            transition:       bottom 75ms ease,transform 75ms cubic-bezier(.215,.61,.355,1) .12s;
+            transform:        rotate(-90deg);
+        }
+    }
+}

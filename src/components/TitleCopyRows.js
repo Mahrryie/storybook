@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/index.scss';
 import LinkArrow from './LinkArrow';
 import TitleLink from './TitleLink';
 import PropTypes from 'prop-types';
@@ -34,7 +33,7 @@ const TitleCopyRows = ({
 export default TitleCopyRows;
 
 TitleCopyRows.propTypes = {
-    items: PropTypes.object,
+    items: PropTypes.array,
     titleNumber: PropTypes.number,
     containerClass: PropTypes.string,
     titleClass: PropTypes.string,
@@ -44,7 +43,7 @@ TitleCopyRows.propTypes = {
 }
 
 TitleCopyRows.defaultProps = {
-    items: {},
+    items: [],
     titleNumber: null,
     containerClass: '',
     titleClass: '',
