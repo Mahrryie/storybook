@@ -6,9 +6,10 @@ const TitleCopyBoxes = ({
     backgroundClass = '',
     imageClass = '',
     objectPosition = '',
-    colorScheme = 'primary'}) => {
+    colorScheme = 'primary',
+    middleRowEven = false}) => {
     return (
-        <div className='title-copy-boxes-container' style={{width: '100%'}}>
+        <div className={`title-copy-boxes-container ${middleRowEven ? 'title-copy-boxes-middle-row-even' : ''}`} style={{width: '100%'}}>
         <div className={`title-copy-boxes-type-${items.length} ${backgroundClass} ${colorScheme}-scheme`}>
             {items.map(({field_title, field_description, field_link, relationships = {}, uri, field_image}) => {
                 return (
@@ -54,11 +55,13 @@ TitleCopyBoxes.propTypes = {
     backgroundClass: PropTypes.string,
     imageClass: PropTypes.string,
     colorScheme: PropTypes.string,
+    middleRowEven: PropTypes.bool,
 }
 
 TitleCopyBoxes.defaultProps = {
     items: [],
     backgroundClass: '',
     imageClass: '',
-    colorScheme: ''
+    colorScheme: '',
+    middleRowEven: false,
 }

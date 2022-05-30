@@ -151,13 +151,17 @@
 a.side-info-menu-item
 {
     padding-bottom: 16px;
-    color:          $pure-black;
     font-weight:    bold;
     font-size:      20px;
     font-style:     normal;
     line-height:    24px;
     text-align:     right;
     cursor:         pointer;
+
+    &:not(.active)
+    {
+        color: $pure-black !important;
+    }
 
     h3
     {

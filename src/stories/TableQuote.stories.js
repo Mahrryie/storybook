@@ -13,10 +13,30 @@ export default {
                 type: 'radio'
             }
         },
-        isCounter: {
-            type: 'boolean'
-        }
-    }
+        listClass: {
+            type: 'String',
+            description: 'Sets styling to list',
+            constrol: {
+                type: 'select',
+            },
+            defaultValue: '',
+            options: ['', 'columns-two', 'columns-three', 'columns-two-modified', 'list-top-padding', 'list-top-padding-mobile', 'list-line-height-extra', 'without-list-mark']
+        },
+        tableClass: {
+            type: 'string',
+            description: 'Sets CSS class to table',
+            default: '',
+        },
+        titleGridClass: {
+            type: 'string',
+            defaultValue: '',
+            description: 'Sets CSS class to left table side',
+            options: ['' , 'main-grid-less-quarter'],
+            control: {
+                type: 'select'
+            }
+        },
+    } 
 }
 
 const Template = (args) => <TableQuote {...args}/>;
@@ -41,8 +61,8 @@ Default.args = {
         field_secondary_description: 'Some secondary description'
     }],
     tableClass: '',
+    textGridClass: '',
     titleGridClass: '',
     listClass: '',
     withoutListMarker: true,
-    colorScheme: 'primary'
 };

@@ -15,6 +15,19 @@ export default {
         },
         isCounter: {
             type: 'boolean'
+        },
+        titleClass: {
+            type: 'string',
+            description: 'Sets classes for left side headers, which do not contain link',
+            defaultValue: '',
+            options: ['', 'second-level-title', 'third-level-title', 'fourth-level-title'],
+            control: {
+                type: 'select'
+            }
+        },
+        renderIcons: {
+            type: 'function',
+            description: 'Can be used to render icons or images'
         }
     }
 }
@@ -49,7 +62,6 @@ Default.args = {
     titleGridClass: '',
     tableTopBorderedClass: '',
     titles: ['Platforms', 'Containerization'],
-    // renderIcons,
     titleClass: 'fifth-level-title',
     listItemParagraphClass: false,
     colorScheme: 'primary-scheme'

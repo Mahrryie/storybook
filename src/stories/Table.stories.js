@@ -15,6 +15,15 @@ export default {
         },
         isCounter: {
             type: 'boolean'
+        },
+        tableClass: {
+            type: 'string',
+            description: 'Sets CSS class to table',
+            default: '',
+            options: ['', 'table-top-bordered', 'table-top-bordered-row', 'table-top-bordered table-top-bordered-row', 'table-top-bordered-columns-four'],
+            control: {
+                type: 'select'
+            }
         }
     }
 }
@@ -26,19 +35,23 @@ Default.args = {
     items: [{
         title: 'Better clinical decisions',
         listItems: [
-            'Quick access to a 360-view of each patient',
+            'Quick access',
             'Reduced medical errors',
-            'Prevention of duplications or conflicts in prescriptions and treatment plans',
-            'Faster emergency care in critical situations',
-            'Symptomatic patterns identification for more accurate diagnoses',
-            'Real-time patient health monitoring'
+            'Prevention of duplications',
+            'Faster emergency care',
+            'Symptomatic patterns',
+            'Real-time health monitoring',
+            'Reduced medical errors',
+            'Prevention of duplications',
+            'Faster emergency',
+            'Symptomatic patterns',
+            'Real-time monotoring'
         ]
     },
     {
         title: 'Improved medical data management',
         listItems: [
             'Prevention of patient data tampering or loss',
-            'Medical data access restriction for unauthorized users',
             'Correct patient data input without duplication',
             'Interoperability across all departments',
             'Secure data sharing',
@@ -47,12 +60,13 @@ Default.args = {
     {
         title: 'Enhanced communication with patients',
         listItems: [
-            'Accurate, up-to-date, and complete information provision to patients',
+            'Complete information provision to patients',
             'Simplified appointment scheduling process',
-            '24/7 access to health information and helpdesk from any device',
+            '24/7 access to health information',
             'Availability of population engagement and education tools',
         ]
     }],
     tableClass: '',
     isCounter: false,
+    colorScheme: 'primary'
 };

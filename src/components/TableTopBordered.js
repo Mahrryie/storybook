@@ -20,7 +20,7 @@ const TableTopBordered = ({
                     </div>
                 ))}
             </div>
-        }
+        } 
         <div className='table-top-bordered'>
             {items.map(({field_title, field_description, field_link, content}, index) => (
                 <div key={index} className='main-grid table-top-bordered-row'>
@@ -51,7 +51,6 @@ export default TableTopBordered;
 TableTopBordered.propTypes = {
     items: PropTypes.array,
     isCounter:PropTypes.bool,
-    titleGridClas: PropTypes.string,
     textGridClass: PropTypes.string,
     headerClass: PropTypes.string,
     titles: PropTypes.array,

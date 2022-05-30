@@ -81,9 +81,9 @@ TableTopBorderedTitles.propTypes = {
     titleGridClass: PropTypes.string,
     tableTopBorderedClass: PropTypes.string,
     titles: PropTypes.array,
-    // renderIcons: PropTypes.func,
+    renderIcons: PropTypes.func,
     titleClass: PropTypes.string,
-    listItemParagraphClass: PropTypes.string,
+    listItemParagraphClass: PropTypes.bool,
     colorScheme: PropTypes.string,
 }
 
@@ -96,7 +96,7 @@ TableTopBorderedTitles.defaultProps = {
     titleGridClass: '',
     tableTopBorderedClass: '',
     titles: [],
-    // renderIcons,
+    renderIcons: (index) => {},
     titleClass: 'fifth-level-title',
     listItemParagraphClass: false,
     colorScheme: 'primary-scheme'

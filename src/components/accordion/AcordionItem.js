@@ -18,7 +18,7 @@ function renderAccordionTitle(
                     <span className='title'>{title}</span>
                     <div className='link-arrow-small'>
                         <svg className='icon-arrow-svg' width='28' height='26' viewBox='0 0 28 26' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                            <path d='M15 2L26 13M26 13L15 24M26 13L2 13' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/>
+                            <path d='M15 2L26 13M26 13L15 24M26 13L2 13' stroke='red' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/>
                         </svg>
                     </div>
                 </a>
@@ -56,9 +56,9 @@ const AccordionItem = ({title, isOpen, featuredAccordion, onClick, content, link
             <div className='accordion-icon' onClick={() => {
                 onClick();
             }}>
-                <svg className='icon-chevron-svg' width='26' height='14' viewBox='0 0 26 14' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                <svg className='icon-chevron-svg' width='26' height='14' viewBox='0 0 26 14' fill='red' xmlns='http://www.w3.org/2000/svg'>
                     <path d='M24 2L13 12L2 2' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/>
-                </svg>z
+                </svg>
             </div>
         </div>
     );

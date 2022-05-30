@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/index.scss';
 import Paragraph from './Paragraph';
 import PropTypes from 'prop-types';
 import TitleThird from './TitleThird';

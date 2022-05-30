@@ -13,6 +13,11 @@ export default {
                 type: 'radio'
             }
         },
+        percentsSup: {
+            type: 'string',
+            description: 'Add additional symbols to a circle',
+            defaultValue: '',
+        }
     }
 }
 
@@ -21,16 +26,21 @@ const Template = (args) => <SubTextImage {...args}/>;
 export const Default = Template.bind({});
 Default.args = {
     items: [{
-        field_title: 'Better clinical decisions',
-        field_description: '20+ years of software development experience in the healthcare industry.'
+        field_title: 'of software development experience in the healthcare industry.',
+        field_description: {
+            value: '20+ years'
+        }
     },
     {
         field_title: 'Improved medical data management',
-        field_description: 'Expertise in integration with Epic, Cerner, Meditech and Allscripts platforms.'
+        field_description: {
+            value: 'Expertise in '
+        }
     },
     {
-        field_title: 'Enhanced communication with patients',
-        field_description: 'Adherence to HIPAA, GDPR, OWASP, and other data security requirements.'
+        field_description: {
+            value: 'HIPAA, GDPR, OWASP, and other data security requirements.'
+        }
     }],
     containerClass: '',
     titleClass: '',

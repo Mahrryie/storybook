@@ -19,8 +19,8 @@ export default {
 
 const Template = (args) => <TitleCopyBoxes {...args}/>;
 
-export const Default = Template.bind({});
-Default.args = {
+export const ThreeItems = Template.bind({});
+ThreeItems.args = {
     items: [{
         field_title: 'CRM implementation',
         field_description: {
@@ -45,6 +45,151 @@ Default.args = {
         },
         field_link: '/crm',
     }],
+    backgroundClass: '',
+    imageClass: '',
+    colorScheme: 'primary'
+};
+
+export const FourItems = Template.bind({});
+FourItems.args = {
+    items: [{
+        field_title: 'CRM implementation',
+        field_description: {
+            value: 'Itransition carries out all stages of CRM implementation, from consulting and strategy outline to system onboarding and user training.'
+        },
+        field_link: '/crm',
+        relationships: {
+            field_image: TitleCopyImg
+        }
+    },
+    {
+        field_title: 'CRM implementation',
+        field_description: {
+            value: 'Itransition carries out all stages of CRM implementation, from consulting and strategy outline to system onboarding and user training.'
+        },
+        field_link: '/crm',
+    },
+    {
+        field_title: 'CRM implementation',
+        field_description: {
+            value: 'Itransition carries out all stages of CRM implementation, from consulting and strategy outline to system onboarding and user training.'
+        },
+        field_link: '/crm',
+    },
+    {
+        field_title: 'CRM implementation',
+        field_description: {
+            value: 'Itransition carries out all stages of CRM implementation, from consulting and strategy outline to system onboarding and user training.'
+        },
+        field_link: '/crm',
+        relationships: {
+            field_image: TitleCopyImg
+        }
+    }],
+    backgroundClass: '',
+    imageClass: '',
+    colorScheme: 'primary'
+};
+
+export const FifthItems = Template.bind({});
+FifthItems.args = {
+    items: [{
+        field_title: 'CRM implementation',
+        field_description: {
+            value: 'Itransition carries out all stages of CRM implementation, from consulting and strategy outline to system onboarding and user training.'
+        },
+        field_link: '/crm',
+        relationships: {
+            field_image: TitleCopyImg
+        }
+    },
+    {
+        field_title: 'CRM implementation',
+        field_description: {
+            value: 'Itransition carries out all stages of CRM implementation, from consulting and strategy outline to system onboarding and user training.'
+        },
+        field_link: '/crm',
+    },
+    {
+        field_title: 'CRM implementation',
+        field_description: {
+            value: 'Itransition carries out all stages of CRM implementation, from consulting and strategy outline to system onboarding and user training.'
+        },
+        field_link: '/crm',
+    },
+    {
+        field_title: 'CRM implementation',
+        field_description: {
+            value: 'Itransition carries out all stages of CRM implementation, from consulting and strategy outline to system onboarding and user training.'
+        },
+        field_link: '/crm',
+        relationships: {
+            field_image: TitleCopyImg
+        }
+    },
+    {
+        field_title: 'CRM implementation',
+        field_description: {
+            value: 'Itransition carries out all stages of CRM implementation, from consulting and strategy outline to system onboarding and user training.'
+        },
+        field_link: '/crm',
+    },],
+    backgroundClass: '',
+    imageClass: '',
+    colorScheme: 'primary'
+};
+
+export const SixItems = Template.bind({});
+SixItems.args = {
+    items: [{
+        field_title: 'CRM implementation',
+        field_description: {
+            value: 'Itransition carries out all stages of CRM implementation, from consulting and strategy outline to system onboarding and user training.'
+        },
+        field_link: '/crm',
+        relationships: {
+            field_image: TitleCopyImg
+        }
+    },
+    {
+        field_title: 'CRM implementation',
+        field_description: {
+            value: 'Itransition carries out all stages of CRM implementation, from consulting and strategy outline to system onboarding and user training.'
+        },
+        field_link: '/crm',
+    },
+    {
+        field_title: 'CRM implementation',
+        field_description: {
+            value: 'Itransition carries out all stages of CRM implementation, from consulting and strategy outline to system onboarding and user training.'
+        },
+        field_link: '/crm',
+    },
+    {
+        field_title: 'CRM implementation',
+        field_description: {
+            value: 'Itransition carries out all stages of CRM implementation, from consulting and strategy outline to system onboarding and user training.'
+        },
+        field_link: '/crm',
+    },
+    {
+        field_title: 'CRM implementation',
+        field_description: {
+            value: 'Itransition carries out all stages of CRM implementation, from consulting and strategy outline to system onboarding and user training.'
+        },
+        field_link: '/crm',
+    },
+    {
+        field_title: 'CRM implementation',
+        field_description: {
+            value: 'Itransition carries out all stages of CRM implementation, from consulting and strategy outline to system onboarding and user training.'
+        },
+        field_link: '/crm',
+        relationships: {
+            field_image: TitleCopyImg
+        }
+    },],
+    middleRowEven: true,
     backgroundClass: '',
     imageClass: '',
     colorScheme: 'primary'

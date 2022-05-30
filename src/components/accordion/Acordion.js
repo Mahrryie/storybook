@@ -15,11 +15,11 @@ const Accordion = ({items, featuredAccordion = false, titleLinkOffset = false, a
     };
     const recountAccordionStartHeight = () => setAccordionStartHeight(0);
 
-    // useEffect(() => {
-    //     if (accordion.current && accordionStartHeight === 0) {
-    //         setAccordionStartHeight(accordion.current.scrollHeight);
-    //     }
-    // }, [accordionStartHeight, defaultItemContent, maxHeight]);
+    useEffect(() => {
+        if (accordion.current && accordionStartHeight === 0) {
+            setAccordionStartHeight(accordion.current.scrollHeight);
+        }
+    }, [accordionStartHeight, defaultItemContent, maxHeight]);
 
     useEffect(() => {
         window.addEventListener('resize', recountAccordionStartHeight);

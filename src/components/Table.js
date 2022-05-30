@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Table = ({items, tableClass = '', isCounter = false}) => {
+const Table = ({items, tableClass = '', isCounter = false, colorScheme = 'primary'}) => {
     return (
-        <div className='container'>
+        <div className={`container ${colorScheme}-scheme`}>
             <div className={`table ${tableClass}`}>
                 {items.map(({title, listItems}, index) => (
                     <div key={title} className='table-row'>

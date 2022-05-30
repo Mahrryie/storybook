@@ -14,7 +14,35 @@ export default {
             }
         },
         isCounter: {
-            type: 'boolean'
+            type: 'boolean',
+            description: 'Available only for title without link'
+        },
+        titleGridClass: {
+            type: 'string',
+            description: 'Sets classes for left side of the table',
+            defaultValue: '',
+            options: ['','main-grid-less-quarter', 'featured-grid-halved-item'],
+            control: {
+                type: 'select'
+            }
+        },
+        textGridClass: {
+            type: 'string',
+            description: 'Sets classes for left side of the table',
+            defaultValue: '',
+            options: ['', 'main-grid-bigger-quarter', 'featured-grid-halved-item'],
+            control: {
+                type: 'select'
+            }
+        },
+        headerClass: {
+            type: 'string',
+            description: 'Sets classes for left side headers, which do not contain link',
+            defaultValue: '',
+            options: ['', 'second-level-title', 'third-level-title', 'fourth-level-title'],
+            control: {
+                type: 'select'
+            }
         }
     }
 }
@@ -27,7 +55,7 @@ Default.args = {
     items: [{
         field_title: 'SAP Commerce',
         field_description: {
-            value: 'A cloud solution for medium and large-scale businesses, equipped with rich built-in features and powered by AI. ',
+            value: 'A cloud solution for medium and large-scale businesses, equipped with rich built-in features and powered by AI. A cloud solution for medium and large-scale businesses, equipped with rich built-in features and powered by AI. ',
         },
         field_link: '/healthcare',
     },
@@ -35,7 +63,7 @@ Default.args = {
         field_title: 'Salesforce',
         field_link: '/healthcare',
         field_description: {
-            value: 'An AI-powered cloud solution for medium and large-scale enterprises, designed for omnichannel commerce',
+            value: 'An AI-powered cloud solution for medium and large-scale enterprises, designed for omnichannel commerce. An AI-powered cloud solution for medium and large-scale enterprises, designed for omnichannel commerce',
         }
     },
     {
@@ -46,10 +74,10 @@ Default.args = {
         }
     },
     {
-        field_title: 'WooCommerce',
+        field_title: 'SAP Commerce',
         field_description: {
-            value: 'An open-source ecommerce platform built for WordPress, which allows SMEs to create online stores and tailor them to their specific requirements.',
-        }
+            value: 'A cloud solution for medium and large-scale businesses, equipped with rich built-in features and powered by AI. A cloud solution for medium and large-scale businesses, equipped with rich built-in features and powered by AI. ',
+        },
     },
     {
         field_title: 'Drupal Commerce',
@@ -57,9 +85,10 @@ Default.args = {
             value: 'A highly customizable ecommerce software, suitable for startups and SMEs, with all its features available for free.',
         }
     }],
-    tableClass: '',
     titleGridClass: '',
-    listClass: '',
-    withoutListMarker: true,
-    colorScheme: 'primary'
+    colorScheme: 'primary',
+    isCounter: false,
+    textGridClass: '',
+    headerClass: '',
+    titles: ['First title', 'Second title']
 };

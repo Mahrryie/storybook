@@ -2,6 +2,7 @@ import React, {useLayoutEffect, useState} from 'react';
 
 const AccordionItemContent = ({isOpen, content, updateMaxHeight, updateOpenedHeight}) => {
     const accordionInner = React.useRef(null);
+    // console.log(accordionInner.current.scrollHeight)
     const [width, setWidth] = useState(0);
 
     useLayoutEffect(() => {

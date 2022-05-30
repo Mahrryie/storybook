@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/typography.scss';
+import PropTypes from 'prop-types';
 
 const Paragraph = ({item = '', paragraphClass = ''}) => {
     return (
@@ -9,6 +9,12 @@ const Paragraph = ({item = '', paragraphClass = ''}) => {
 
 export default Paragraph;
 
+Paragraph.propTypes = {
+    item: PropTypes.string,
+    paragraphClass: PropTypes.string,
+}
+
 Paragraph.defaultProps = {
+    item: '',
     paragraphClass: '',
 };

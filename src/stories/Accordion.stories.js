@@ -34,8 +34,8 @@ const Template = (args) => (
     <Accordion {...args}/>
 );
 
-export const Default = Template.bind({});
-Default.args = { 
+export const NOTREADY = Template.bind({});
+NOTREADY.args = { 
     items: [{
         title: "Test title",
         content: 'Test',

@@ -13,11 +13,11 @@ const Sidemenu = ({type, title, subtitle, items, share, colorScheme}) => {
                 </div>
             </div>
             <ul className='side-info-menu-list'>
-                {items.map(({title, subtitle, link}) => {
+                {items.map(({title, subtitle, link}, index) => {
                     if (title) {
                         return (
                             <li key={link}  className={`${type == 'Blog'? 'blog-side-menu': ''}`}>
-                                <Link to={link} key={title} className='side-info-menu-item' activeClass='active' spy={true} smooth={true} duration={300} offset={-80}>
+                                <Link to={link} key={title} className={`side-info-menu-item ${index == 0 && 'active'}`} spy={true} smooth={true} duration={300} offset={-80}>
                                 {type == 'Blog'? <h3>{title}</h3> : title}</Link>
                             </li>
                         );
