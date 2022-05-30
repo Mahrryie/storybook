@@ -96,6 +96,12 @@ a
     &:not(.has-text)
     {
         padding-top: $icon-square-size + 12px;
+
+        .title-link-wrapper &
+        {
+            padding-top: 0;
+            border-bottom: none;
+        }
     }
 
     &.link-arrow-margin
