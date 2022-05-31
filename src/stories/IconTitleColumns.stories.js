@@ -25,8 +25,8 @@ export default {
         },
         iconTitleColumnsClass: {
             type: 'string',
-            description: 'Custom CSS classes. Class .one-row works only with columns-4 || -5',
-            options: ['titles-only-type-1', 'one-row', 'columns-2-turn-into-4', 'one-row columns-2-turn-into-4', ''],
+            description: 'Custom CSS classes. Class .one-row works only with columns-4 || -5. extra-grid-row - works only with > 4 items',
+            options: ['extra-grid-row', 'titles-only-type-1', 'one-row', 'columns-2-turn-into-4', 'one-row columns-2-turn-into-4', ''],
             control: {
                 type: 'select'
             }

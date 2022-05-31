@@ -106,7 +106,8 @@ $layout-404-outline-btn-active-bg: rgba($white, 0.05);
     {
         a,
         .blog-portfolio-content .colored-titles-table table tr:nth-of-type(even) td:first-of-type,
-        a.list-block-link-item:hover .list-block-links-title
+        a.list-block-link-item:hover .list-block-links-title,
+        table a
         {
             color: $second-color;
         }
@@ -152,7 +153,7 @@ $layout-404-outline-btn-active-bg: rgba($white, 0.05);
         {
             color:            $white;
             background-color: $main-color;
-            transition:       background-color .3s;
+            transition:       background-color v.$basic-hover-transition;
 
             &:hover
             {
@@ -169,7 +170,7 @@ $layout-404-outline-btn-active-bg: rgba($white, 0.05);
         {
             color:        $main-color;
             border-color: $main-color;
-            transition:   all .3s;
+            transition:   all v.$basic-hover-transition;
 
             &:hover,
             &:active
@@ -184,7 +185,7 @@ $layout-404-outline-btn-active-bg: rgba($white, 0.05);
             {
                 color:        $dark-gray;
                 border-color: $black;
-                transition:   background-color .3s;
+                transition:   background-color v.$basic-hover-transition;
 
                 &:hover,
                 &:active
@@ -213,7 +214,7 @@ $layout-404-outline-btn-active-bg: rgba($white, 0.05);
             {
                 path
                 {
-                    transition: fill .3s;
+                    transition: fill v.$basic-hover-transition;
                     fill:       $dark-gray;
                 }
 
@@ -231,7 +232,7 @@ $layout-404-outline-btn-active-bg: rgba($white, 0.05);
         {
             .icon-social-svg path
             {
-                transition: fill .3s;
+                transition: fill v.$basic-hover-transition;
                 fill:       $black;
             }
 
@@ -388,6 +389,33 @@ $layout-404-outline-btn-active-bg: rgba($white, 0.05);
             background-color: $fourth-color;
         }
 
+        @media #{v.$small-tablet-max-767}
+        {
+            .cta,
+            .cta-small
+            {
+                background-color: transparent;
+            }
+
+            .background-theme + .cta,
+            .background-theme + .half-callout-wrapper .cta-small
+            {
+                background-color: $main-color;
+            }
+
+            .background-light-gray + .cta,
+            .background-light-gray + .half-callout-wrapper .cta-small
+            {
+                background-color: $super-light-gray;
+            }
+
+            .cta .callout-stripe-copy,
+            .half-callout-wrapper .cta-small .callout-stripe-copy
+            {
+                background-color: $fourth-color;
+            }
+        }
+
         .callout-stripe-button,
         .callout-stripe-small,
         .callout-stripe-button-small,
@@ -401,12 +429,12 @@ $layout-404-outline-btn-active-bg: rgba($white, 0.05);
         {
             background-color: $third-color;
             border:           1px solid $third-color;
-            transition:       all .3s;
+            transition:       all v.$basic-hover-transition;
 
             &::after
             {
                 background-color: $third-color;
-                transition: background-color .3s;
+                transition: background-color v.$basic-hover-transition;
             }
 
             &:hover
@@ -431,13 +459,13 @@ $layout-404-outline-btn-active-bg: rgba($white, 0.05);
             }
         }
 
-        // .cards .swiper-slide:nth-child(5n+5) .cards-item
-        // {
-        //     @media #{v.$tablet-max-1024}
-        //     {
-        //         background-color: $fourth-color;
-        //     }
-        // }
+        .cards .swiper-slide:nth-child(5n+5) .cards-item
+        {
+            @media #{v.$tablet-max-1024}
+            {
+                background-color: $fourth-color;
+            }
+        }
 
         .link-arrow,
         .link-arrow-single,
@@ -468,7 +496,7 @@ $layout-404-outline-btn-active-bg: rgba($white, 0.05);
         .link-arrow-single-inner,
         .accordion-icon
         {
-            transition: background-color .3s;
+            transition: background-color v.$basic-hover-transition;
 
             &:hover,
             &:active
@@ -534,6 +562,16 @@ $layout-404-outline-btn-active-bg: rgba($white, 0.05);
         .background-theme
         {
             background-color: $main-color;
+
+            &.no-background-color
+            {
+                background-color: $white;
+
+                *
+                {
+                    color: initial;
+                }
+            }
 
             *
             {
@@ -732,6 +770,11 @@ $layout-404-outline-btn-active-bg: rgba($white, 0.05);
             &.active
             {
                 color: $third-color;
+
+                h3
+                {
+                    color: $third-color;
+                }
             }
         }
 
@@ -758,20 +801,20 @@ $layout-404-outline-btn-active-bg: rgba($white, 0.05);
             }
         }
 
-        // .main-navigation-menu-multi,
-        // .main-navigation-menu-single
-        // {
-        //     .link
-        //     {
-        //         &:hover:not(.page-404-layout)
-        //         {
-        //             @media #{v.$laptop-min-1025}
-        //             {
-        //                 color: $second-color;
-        //             }
-        //         }
-        //     }
-        // }
+        .main-navigation-menu-multi,
+        .main-navigation-menu-single
+        {
+            .link
+            {
+                &:hover:not(.page-404-layout)
+                {
+                    @media #{v.$laptop-min-1025}
+                    {
+                        color: $second-color;
+                    }
+                }
+            }
+        }
 
         .share-menu-link
         {

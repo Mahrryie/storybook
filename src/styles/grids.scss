@@ -1,7 +1,7 @@
 @use 'sass:math';
 @use 'sass:list';
 @use './variables' as v;
-@import './mixins';
+@import 'mixins';
 
 @mixin left-halved-content-item
 {
@@ -73,6 +73,11 @@
                 flex-direction: column-reverse;
             }
         }
+    }
+
+    &.section-inside-offset
+    {
+        margin-bottom: v.$semi-large-margin;
     }
 
     @media #{v.$small-tablet-max-767}
@@ -305,6 +310,11 @@
 .halved-content-item + .halved-content-item
 {
     @include right-halved-content-item;
+
+    &.small-data-area .container-small
+    {
+        max-width: v.$small-data-area;
+    }
 }
 
 .halved-content-image-item
@@ -313,6 +323,11 @@
     flex-direction:  column;
     justify-content: space-between;
     width:           100%;
+
+    img
+    {
+        image-rendering: -webkit-optimize-contrast;
+    }
 
     @media #{v.$large-desktop-view}
     {
@@ -521,101 +536,5 @@
         {
             margin-top: 0;
         }
-    }
-}
-
-.two-columns-background
-{
-    &.wrapped-grid
-    {
-        .halved-content-item
-        {
-            @media #{v.$small-desktop-view}
-            {
-                width: 100%;
-            }
-
-            &:first-of-type
-            {
-                @media #{v.$small-desktop-view}
-                {
-                    padding-bottom: v.$large-margin;
-                }
-            }
-
-            &:last-of-type
-            {
-                @media #{v.$small-desktop-view}
-                {
-                    padding: v.$large-margin v.$default-padding v.$default-section-margin;
-                }
-
-                @media #{v.$tablet-max-1024}
-                {
-                    padding-top: v.$middle-padding;
-                }
-            }
-
-            .container-small
-            {
-                @media #{v.$small-desktop-view}
-                {
-                    max-width: none;
-                }
-            }
-        }
-    }
-}
-
-.large-desktop-only
-{
-    display: none;
-
-    @media #{v.$large-desktop-view}
-    {
-        display: block;
-    }
-}
-
-.desktop-only
-{
-    @media #{v.$tablet-max-1024}
-    {
-        display: none;
-    }
-}
-
-.desktop-tablet-only
-{
-    @media #{v.$small-tablet-max-767}
-    {
-        display: none;
-    }
-}
-
-.device-only
-{
-    @media #{v.$laptop-min-1025}
-    {
-        display: none;
-    }
-}
-
-.small-device-only
-{
-    @media #{v.$laptop-min-1025, v.$large-tablet}
-    {
-        display: none;
-    }
-}
-
-.image-device-only
-{
-    max-height: 250px;
-
-    @media #{v.$tablet-max-1024}
-    {
-        margin-right: -(v.$default-mobile-padding);
-        margin-left:  -(v.$default-mobile-padding);
     }
 }
