@@ -1,0 +1,171 @@
+@use './variables.scss' as v;
+
+textarea
+{
+    min-height: 158px;
+    resize:     none;
+}
+
+input,
+textarea
+{
+    &:not([type='file'])
+    {
+        width:     100%;
+        padding:   16.5px 12px;
+        font-size: 16px;
+        border:    2px solid $light-gray;
+    }
+}
+
+::placeholder
+{
+    color: $gray;
+}
+
+button
+{
+    font-size: 16px;
+    cursor:    pointer;
+}
+
+.attach-file-note
+{
+    position:         absolute;
+    top:              100%;
+    left:             50%;
+    z-index:          1;
+    display:          none;
+    margin-top:       10px;
+    padding:          15px 20px;
+    padding-bottom:   10px;
+    background-color: $white;
+    border:           2px solid $light-gray;
+    border-radius:    5px;
+    box-shadow:       0 4px 12px rgba(8, 46, 181, 0.12);
+    transform:        translateX(-50%);
+
+    @media #{v.$large-tablet}
+    {
+        top: -220px;
+    }
+
+    @media #{v.$small-tablet-max-767}
+    {
+        min-width: 300px;
+    }
+
+    &::before,
+    &::after
+    {
+        position:       absolute;
+        bottom:         100%;
+        left:           50%;
+        width:          0;
+        height:         0;
+        border:         solid transparent;
+        content:        '';
+        pointer-events: none;
+
+        @media #{v.$large-tablet}
+        {
+            top:       100%;
+            transform: rotate(180deg);
+        }
+    }
+
+    &::before
+    {
+        margin-left:         -13px;
+        border-color:        rgba(224, 224, 224, 0);
+        border-width:        13px;
+        border-bottom-color: $light-gray;
+    }
+
+    &::after
+    {
+        margin-left:         -10px;
+        border-color:        rgba(255, 255, 255, 0);
+        border-width:        10px;
+        border-bottom-color: $white;
+    }
+}
+
+.attach-file-mark
+{
+    position:    relative;
+    margin-left: 12px;
+    cursor:      pointer;
+
+    &:hover
+    {
+        .attach-file-note
+        {
+            display: block;
+        }
+
+        .question-mark-svg path
+        {
+            .page-404-layout &,
+            .something-wrong-layout &
+            {
+                fill: $light-blue;
+            }
+        }
+    }
+
+    .question-mark-svg
+    {
+        width:  23px;
+        height: 23px;
+    }
+}
+
+.attach-file-note-paragraph
+{
+    font-size: 14px;
+
+    @media #{v.$laptop-min-1025}
+    {
+        white-space: nowrap;
+    }
+
+    + .attach-file-note-paragraph
+    {
+        padding-top: 12px;
+    }
+}
+
+.attach-file-note-list
+{
+    display:    flex;
+    margin-top: 7px;
+
+    @media #{v.$small-tablet-max-767}
+    {
+        flex-wrap: wrap;
+    }
+
+    .column
+    {
+        @media #{v.$small-tablet-max-767}
+        {
+            width:         20%;
+            margin-bottom: v.$default-mobile-padding;
+        }
+
+        &:not(:last-of-type)
+        {
+            @media #{v.$laptop-min-1025, v.$large-tablet}
+            {
+                margin-right: 20px;
+            }
+        }
+    }
+
+    p
+    {
+        padding-top: 0;
+        font-size:   14px;
+    }
+}

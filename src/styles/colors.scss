@@ -190,8 +190,9 @@ $layout-404-outline-btn-active-bg: rgba($white, 0.05);
                 &:hover,
                 &:active
                 {
-                    color:        $main-color;
-                    border-color: $main-color;
+                    color:            $main-color;
+                    border-color:     $main-color;
+                    background-color: transparent;
 
                     &.MuiButton-root:hover
                     {
