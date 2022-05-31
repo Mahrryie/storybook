@@ -20,8 +20,8 @@ const Template = (args) => (
     <Accordion {...args}/>
 );
 
-export const NOTREADY = Template.bind({});
-NOTREADY.args = { 
+export const Default = Template.bind({});
+Default.args = { 
     items: [{
         title: "Architecture design",
         content: <p>We build application architectures from the ground up, including multi-tenant ones, paying special attention to their scalability and resilience.'</p>,

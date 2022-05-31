@@ -24,7 +24,8 @@ const ContainerTwoColumnsBackground = ({
                 </div>
             </div>
         </div>
-    );
+    )
+    
 };
 
 export default ContainerTwoColumnsBackground;

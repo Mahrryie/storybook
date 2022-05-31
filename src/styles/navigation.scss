@@ -551,7 +551,7 @@ $homepage-navigation-image: calc(100% - 740px);
         {
             .icon-chevron-svg
             {
-                @media #{$navigation-device-view}
+                @media #{v.$navigation-device-view}
                 {
                     transform: rotate(180deg);
                 }

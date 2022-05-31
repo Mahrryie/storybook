@@ -91,6 +91,11 @@
         grid-template-columns: auto;
     }
 
+    &.extra-grid-row
+    {
+        grid-row-gap: 40px;
+    }
+
     &.columns-7
     {
         row-gap: math.div(v.$middle-padding, 2);

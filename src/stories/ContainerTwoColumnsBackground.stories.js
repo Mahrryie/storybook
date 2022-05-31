@@ -25,6 +25,10 @@ export default {
             type: 'string',
             description: 'Custom css classes',
             defaultValue: '',
+            options: ['', 'small-data-area',  'no-background-color', 'small-data-area no-background-color'],
+            control: {
+                type: 'select'
+            }
         },
         schemeColor: {
             type: 'string',
