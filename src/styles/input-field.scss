@@ -1,0 +1,98 @@
+.main-text-field
+{
+    position:       relative;
+    display:        inline-flex;
+    flex-direction: column;
+    min-width:      0;
+    margin:         0;
+    padding:        0;
+    vertical-align: top;
+    border:         0;
+
+    &-label
+    {
+        position:         absolute;
+        top:              0;
+        left:             0;
+        z-index:          1;
+        display:          block;
+        padding:          0;
+        font-weight:      400;
+        font-size:        1rem;
+        line-height:      1;
+        letter-spacing:   0.00938em;
+        transform:        translate(14px, 20px) scale(1);
+        transform-origin: top left;
+        transition:       color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms,transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+        pointer-events:   none;
+
+
+        &.shrink
+        {
+            transform: translate(14px, -3px) scale(0.75);
+        }
+    }
+
+    &-input
+    {
+        display:            block;
+        box-sizing:         border-box;
+        width:              100%;
+        min-width:          0;
+        margin:             0;
+        padding:            6px 0 7px;
+        color:              currentColor;
+        font:               inherit;
+        letter-spacing:     inherit;
+        background:         none;
+        border:             0;
+        animation-name:     mui-auto-fill-cancel;
+        animation-duration: 10ms;
+    }
+
+    &-fieldset
+    {
+        position:       absolute;
+        top:            -5px;
+        right:          0;
+        bottom:         0;
+        left:           0;
+        margin:         0;
+        padding:        0 8px;
+        overflow:       hidden;
+        border:         0;
+        border-style:   solid;
+        border-width:   1px;
+        border-radius:  inherit;
+        pointer-events: none;
+        border:         none;
+    }
+
+    &-legend
+    {
+        display:    block;
+        width:      auto;
+        max-width:  0.01px;
+        height:     11px;
+        padding:    0;
+        font-size:  0.75em;
+        text-align: left;
+        visibility: hidden;
+        transition: max-width 50ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+
+        span
+        {
+            display:       inline-block;
+            padding-right: 5px;
+            padding-left:  5px;
+            visibility:    hidden;
+        }
+    }
+
+    .text-input-field
+    {
+        position:    relative;
+        font-weight: 400;
+        border:      0;
+    }
+}
