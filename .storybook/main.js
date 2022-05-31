@@ -15,6 +15,14 @@ module.exports = {
   "core": {
     "builder": "@storybook/builder-webpack5"
   },
+  "refs": {
+    "chromatic-published-Storybook": {
+      // The title of your Storybook
+      title: "ITRCOM UI Components",
+      // The url provided by Chromatic when it was published
+      url: "https://itr.chromatic.com",
+    },
+  },
   webpackFinal: async (config, { configType }) => {
     // By default, storybook 5.32/6+ throw all files without a respective loader at `file-loader` in a `oneOf` loop.
     // Add the exclusion of inline SVGs (e.g. icon-name.inline.svg) to mimic webpack overridden CRA configuration.
