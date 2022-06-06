@@ -16,6 +16,10 @@ export default {
         items: {
             type: 'array',
             description: 'An array of objects with fileName, title, path, descriptionField, internal properties'
+        },
+        containerClass: {
+            type: 'string',
+            description: 'Sets custom CSS class. .keep-initial-width-scheme retains initial scheme width, can be used for large schemes that do not need to be scaled down'
         }
       }
 }
