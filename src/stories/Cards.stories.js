@@ -112,9 +112,3 @@ Default.args = {
         }
     }]
 };
-
-// export const BackgroundLightGray = Background.bind({});
-// BackgroundLightGray.args = {
-//   containerClass: 'background-light-gray',
-//   backgroundColor: 'n'
-// };
